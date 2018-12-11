@@ -7,7 +7,7 @@ description: >-
 
 # IOS埋点SDK
 
-## 埋点 SDK集成 
+## 埋点 SDK集成
 
 ### 1. 选择集成方式
 
@@ -17,17 +17,17 @@ description: >-
 * 执行`pod update`，不要用`--no-repo-update`选项
 * 直接进行第 2 步 “[设置 URL Scheme](mai-dian-sdk-ji-cheng.md#2-she-zhi-url-scheme)”
 
-#### （2）手动集成 SDK 
+#### （2）手动集成 SDK
 
 * 下载 2.6.3 版 iOS SDK以下包：[GrowingHeader ](https://assets.growingio.com/sdk/ios/GrowingIO-iOS-PublicHeader-2.6.3.zip)，[GrowingCoreKit](https://assets.growingio.com/sdk/ios/GrowingIO-iOS-CoreKit-2.6.3.zip)
 * 解压 iOS SDK 压缩文件
-*  将Growing.h,GrowingCoreKit.framework添加到iOS工程中。
+* 将Growing.h,GrowingCoreKit.framework添加到iOS工程中。
 
 {% hint style="warning" %}
 #### **提醒:**  记得勾选 "Copy items if needed"
 {% endhint %}
 
-•  添加依赖, 在项目中添加以下库文件
+• 添加依赖, 在项目中添加以下库文件
 
 | **库名称** | **类型** |
 | :--- | :--- |
@@ -44,19 +44,19 @@ description: >-
 #### 提醒：添加项目依赖库的位置在项目设置target -&gt; 选项卡General -&gt; Linked Frameworks and Libraries
 {% endhint %}
 
-  添加编译参数，注意大小写:
+添加编译参数，注意大小写:
 
-![](../../.gitbook/assets/image%20%28164%29.png)
+![](../../.gitbook/assets/image-164.png)
 
 ### **2.设置URL Scheme**
 
 #### **\(1\) 获取URL Scheme**
 
-•   添加新产品：登录官网-&gt; 点击项目选择框-&gt; 点击“项目管理” -&gt; 点击“应用管理” -&gt; 点击“新建应用”-&gt;选择添加iOS 应用-&gt; 填写“应用名称“，点击下一步-&gt;在第二段中标黄字体。
+• 添加新产品：登录官网-&gt; 点击项目选择框-&gt; 点击“项目管理” -&gt; 点击“应用管理” -&gt; 点击“新建应用”-&gt;选择添加iOS 应用-&gt; 填写“应用名称“，点击下一步-&gt;在第二段中标黄字体。
 
-•   现有产品：登录官网-&gt; 点击项目选择框-&gt; 点击“项目管理” -&gt; 点击“应用管理” -&gt; 找到对应产品的URL Scheme
+• 现有产品：登录官网-&gt; 点击项目选择框-&gt; 点击“项目管理” -&gt; 点击“应用管理” -&gt; 找到对应产品的URL Scheme
 
-![](../../.gitbook/assets/image%20%28155%29.png)
+![](../../.gitbook/assets/image-155.png)
 
 #### **\(2\) 添加URL Scheme（growing.xxxxxxxxxxxxxxxx）到项目中**
 
@@ -74,6 +74,7 @@ description: >-
 ```
 
 {% hint style="warning" %}
+
 ### 提醒：
 
 * 若您在 AppDelegate 中实现了以下一个或多个方法，请在已实现的函数中，调用`[Growing handleUrl:]`
@@ -91,7 +92,6 @@ description: >-
   ```
 
 * 实际情况可能很复杂，请在调试时确保函数`[Growing handleUrl:]`会被执行到
-{% endhint %}
 
 ### **3.添加初始化函数**
 
@@ -114,11 +114,11 @@ description: >-
 
 至此，您的SDK安装就成功了。
 
-## 自定义事件和变量 API  <a id="zi-ding-yi-shi-jian-he-bian-liang-api"></a>
+## 自定义事件和变量 API   <a id="zi-ding-yi-shi-jian-he-bian-liang-api"></a>
 
-
-
-      您的APP或网页在集成了 GrowingIO 的 SDK 之后，它将会自动地为您采集一系列用户行为数据，并在 GrowingIO 分析后台供您制成数据分析报表。除上述的用户行为数据（或称为无埋点数据）之外，GrowingIO 还提供了多种 API 接口，供您上传一些[自定义事件](https://docs.growingio.com/docs/~/drafts/-LI499co1_eo3lOYex8t/primary/data-defination/events-metrics/manual-metrics)和[变量](https://docs.growingio.com/docs/~/drafts/-LI499co1_eo3lOYex8t/primary/data-defination/dimensions/manual-dimensions)，下面介绍自定义事件和变量 API 使用方法。
+```text
+  您的APP或网页在集成了 GrowingIO 的 SDK 之后，它将会自动地为您采集一系列用户行为数据，并在 GrowingIO 分析后台供您制成数据分析报表。除上述的用户行为数据（或称为无埋点数据）之外，GrowingIO 还提供了多种 API 接口，供您上传一些[自定义事件](https://docs.growingio.com/docs/~/drafts/-LI499co1_eo3lOYex8t/primary/data-defination/events-metrics/manual-metrics)和[变量](https://docs.growingio.com/docs/~/drafts/-LI499co1_eo3lOYex8t/primary/data-defination/dimensions/manual-dimensions)，下面介绍自定义事件和变量 API 使用方法。
+```
 
 SDK 提供多种不同类型的API，请根据您的实际需要正确地调用。
 
@@ -154,11 +154,11 @@ SDK 提供多种不同类型的API，请根据您的实际需要正确地调用�
 + (void)clearUserId;
 ```
 
-### track <a id="track"></a>
+### track  <a id="track"></a>
 
 发送一个自定义事件。在添加所需要发送的事件代码之前，需要在打点管理用户界面声明事件以及事件级变量。
 
-#### 参数说明： <a id="can-shu-shuo-ming"></a>
+#### 参数说明：  <a id="can-shu-shuo-ming"></a>
 
 | 参数名称 | 参数类型 | 是否必须 | 说明 |
 | :--- | :--- | :--- | :--- |
@@ -168,38 +168,36 @@ SDK 提供多种不同类型的API，请根据您的实际需要正确地调用�
 
 **参数限制条件：**
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
+| eventId | 英文数字组合的字符串，不能为 nil 或者""，长度小于等于50，且不能含有特殊字符 |
+| :--- | :--- |
+
+
+| number | 正整数或浮点数 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">eventId</td>
-      <td style="text-align:left">英文数字组合的字符串，不能为 nil 或者""，长度小于等于50，且不能含有特殊字符</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">number</td>
-      <td style="text-align:left">正整数或浮点数</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">eventLevelVariable</td>
-      <td style="text-align:left">
+      <th style="text-align:left">eventLevelVariable</th>
+      <th style="text-align:left">
         <p>不能为nil；eventLevelVariable 内部不允许含有<code>JSONObject</code>或者<code>JSONArray&#xFF1B;</code>
         </p>
         <p><code>key</code> 长度限制小于等于50，<code>value</code> 长度限制小等于1000，值不能为空串，也就是""。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>```objectivec
-// track API原型
-+ (void)track:(NSString *)eventId;
-+ (void)track:(NSString *)eventId withNumber:(NSNumber *)number;
-+ (void)track:(NSString *)eventId withNumber:(NSNumber *)number andVariable:(NSDictionary<NSString *, NSObject *> *)variable;
-+ (void)track:(NSString *)eventId withVariable:(NSDictionary<NSString *, NSObject *> *)variable;
-```
+  </thead>
+  <tbody></tbody>
+</table>* \(void\)track:\(NSString \*\)eventId;
+* \(void\)track:\(NSString _\)eventId withNumber:\(NSNumber_ \)number;
+* \(void\)track:\(NSString _\)eventId withNumber:\(NSNumber_ \)number andVariable:\(NSDictionary \*\)variable;
+* \(void\)track:\(NSString _\)eventId withVariable:\(NSDictionary&lt;NSString_ , NSObject _&gt;_ \)variable;
+
+  \`\`\`
 
 ```objectivec
 // track API调用示例一
@@ -230,37 +228,35 @@ SDK 提供多种不同类型的API，请根据您的实际需要正确地调用�
 
 **参数限制条件：**
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
+| key | 不能为 nil 或者""，长度小于等于50 |
+| :--- | :--- |
+
+
+| value | 不能为 nil 或者""，若为字符串则长度应小于等于 1000 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">key</td>
-      <td style="text-align:left">不能为 nil 或者""，长度小于等于50</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">value</td>
-      <td style="text-align:left">不能为 nil 或者""，若为字符串则长度应小于等于 1000</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">pageLevelVariable</td>
-      <td style="text-align:left">
+      <th style="text-align:left">pageLevelVariable</th>
+      <th style="text-align:left">
         <p>不能为nil; pageLevelVariables 内部不允许含有<code>JSONObject</code>或者<code>JSONArray&#xFF1B;</code>
         </p>
         <p><code>key</code> 长度限制小于等于50，<code>value</code> 长度限制小等于1000，值不能为空串，也就是""。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>```objectivec
-// setPageVariable API原型
-+ (void)setPageVariableWithKey:(NSString *)key andStringValue:(NSString *)stringValue toViewController:(UIViewController *)viewController;
-+ (void)setPageVariableWithKey:(NSString *)key andNumberValue:(NSNumber *)numberValue toViewController:(UIViewController *)viewController;
-+ (void)setPageVariable:(NSDictionary<NSString *, NSObject *> *)variable toViewController:(UIViewController *)viewController;
-```
+  </thead>
+  <tbody></tbody>
+</table>* \(void\)setPageVariableWithKey:\(NSString _\)key andStringValue:\(NSString_ \)stringValue toViewController:\(UIViewController \*\)viewController;
+* \(void\)setPageVariableWithKey:\(NSString _\)key andNumberValue:\(NSNumber_ \)numberValue toViewController:\(UIViewController \*\)viewController;
+* \(void\)setPageVariable:\(NSDictionary _\)variable toViewController:\(UIViewController_ \)viewController;
+
+  \`\`\`
 
 ```objectivec
 // setPageVariable API调用示例一
@@ -286,37 +282,35 @@ SDK 提供多种不同类型的API，请根据您的实际需要正确地调用�
 
 **参数限制条件：**
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
+| key | 不能为 nil 或者""，长度小于等于50 |
+| :--- | :--- |
+
+
+| Value | 变量不为nil或者""，若为字符串则长度应小于等于 1000 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">key</td>
-      <td style="text-align:left">不能为 nil 或者""，长度小于等于50</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Value</td>
-      <td style="text-align:left">变量不为nil或者""，若为字符串则长度应小于等于 1000</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">conversionLevelVariable</td>
-      <td style="text-align:left">
+      <th style="text-align:left">conversionLevelVariable</th>
+      <th style="text-align:left">
         <p>不能为nil; conversionLevelVariable 内部不允许含有<code>JSONObject</code>或者<code>JSONArray&#xFF1B;</code>
         </p>
         <p><code>key</code> 长度限制小于等于50，<code>value</code> 长度限制小等于1000，值不能为空串，也就是""。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>```objectivec
-// setEvar API原型
-+ (void)setEvarWithKey:(NSString *)key andStringValue:(NSString *)stringValue;
-+ (void)setEvarWithKey:(NSString *)key andNumberValue:(NSNumber *)numberValue;
-+ (void)setEvar:(NSDictionary<NSString *, NSObject *> *)variable;
-```
+  </thead>
+  <tbody></tbody>
+</table>* \(void\)setEvarWithKey:\(NSString _\)key andStringValue:\(NSString_ \)stringValue;
+* \(void\)setEvarWithKey:\(NSString _\)key andNumberValue:\(NSNumber_ \)numberValue;
+* \(void\)setEvar:\(NSDictionary \*\)variable;
+
+  \`\`\`
 
 ```objectivec
 // setEvar API调用示例一
@@ -342,37 +336,35 @@ SDK 提供多种不同类型的API，请根据您的实际需要正确地调用�
 
 **参数限制条件：**
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
+| key | 不能为nil或""，长度小于等于50 |
+| :--- | :--- |
+
+
+| value | 变量不为nil或者""，若为字符串则长度应小于等于 1000 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">key</td>
-      <td style="text-align:left">不能为nil或""，长度小于等于50</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">value</td>
-      <td style="text-align:left">变量不为nil或者""，若为字符串则长度应小于等于 1000</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">customerVariables</td>
-      <td style="text-align:left">
+      <th style="text-align:left">customerVariables</th>
+      <th style="text-align:left">
         <p>不能为nil;customerVarialbes 内部不允许含有<code>JSONObject</code>或者<code>JSONArray&#xFF1B;</code>
         </p>
         <p><code>key</code> 长度限制小于等于50，<code>value</code> 长度限制小等于1000，值不能为空串，也就是""。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>```objectivec
-// setPeopleVariable API原型
-+ (void)setPeopleVariableWithKey:(NSString *)key andStringValue:(NSString *)stringValue;
-+ (void)setPeopleVariableWithKey:(NSString *)key andNumberValue:(NSNumber *)numberValue;
-+ (void)setPeopleVariable:(NSDictionary<NSString *, NSObject *> *)variable;
-```
+  </thead>
+  <tbody></tbody>
+</table>* \(void\)setPeopleVariableWithKey:\(NSString _\)key andStringValue:\(NSString_ \)stringValue;
+* \(void\)setPeopleVariableWithKey:\(NSString _\)key andNumberValue:\(NSNumber_ \)numberValue;
+* \(void\)setPeopleVariable:\(NSDictionary \*\)variable;
+
+  \`\`\`
 
 ```objectivec
 // setPeopleVariable API调用示例一
@@ -398,27 +390,25 @@ SDK 提供多种不同类型的API，请根据您的实际需要正确地调用�
 
 **参数限制条件：**
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">variable</td>
-      <td style="text-align:left">
+      <th style="text-align:left">variable</th>
+      <th style="text-align:left">
         <p>不能为<code>nil;variable</code> 内部不允许含有<code>JSONObject</code>或者<code>JSONArray&#xFF1B;</code>
         </p>
         <p><code>key</code> 长度限制小于等于50，<code>value</code> 长度限制小等于1000，值不能为空串，也就是""。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>```objectivec
-// setVisitor 访问用户变量 API原型
-+ (void)setVisitor:(NSDictionary<NSString *, NSObject *> *)variable;
-```
+  </thead>
+  <tbody></tbody>
+</table>* \(void\)setVisitor:\(NSDictionary \*\)variable;
+
+  \`\`\`
 
 ```text
 // setVisitor API调用示例
@@ -556,6 +546,4 @@ SDK 提供多种不同类型的API，请根据您的实际需要正确地调用�
 23，获取当前访问id
 + (NSString*)getSessionId;
 ```
-
-
 

@@ -30,7 +30,6 @@ description: 小程序利用二维码、小程序码进行推广时，可以在G
 
 ![&#x586B;&#x5199;&#x4E8C;&#x7EF4;&#x7801;&#x4FE1;&#x606F;](../.gitbook/assets/034ad5f7-09a3-437e-bd59-095b8dc4a496.png)
 
-  
 创建成功后，可以直接下载码，进行推广使用。
 
 ![](../.gitbook/assets/8d547ea8-1bcf-45a1-a191-3a15e09bf67d.png)
@@ -52,8 +51,6 @@ description: 小程序利用二维码、小程序码进行推广时，可以在G
 保存此事件分析，可以调整事件分析的时间，进行下钻，还可以查看不同用户群，加入核心事件等。
 
 ![](../.gitbook/assets/820c07b2-3f38-40f7-9dcf-82c9efec1eb8.png)
-
-
 
 **注意**：GrowingIO调用A和C接口生成小程序码和小程序二维码，腾讯支持调用A\C接口共生成10w个码。具体的生成接口、生成限制、以及开发者文档，请参考如下链接：[https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/qr-code.html](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/qr-code.html)
 

@@ -48,9 +48,7 @@ GrowingIO在所有平台的SDK中都提供了对应的API来实现应用运行�
 
 GrowingIO提供了一个基于HTTP的 用户属性上传接口，您可以通过调用这个接口来实现从服务器批量上传用户属性。
 
-参考：[用户属性上传API](https://growingio.gitbook.io/docs/api/user-property-upload) 
-
-
+参考：[用户属性上传API](https://growingio.gitbook.io/docs/api/user-property-upload)
 
 ## 常见问题
 

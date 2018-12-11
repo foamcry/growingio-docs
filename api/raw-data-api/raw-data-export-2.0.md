@@ -6,15 +6,13 @@
   * [GET 导出全部类型原始数据](raw-data-export-2.0.md#dao-chu-quan-bu-lei-xing-yuan-shi-shu-ju)
 * [3.原始数据导出版本和GrowingIO数据主版本（SDK 版本）关系](raw-data-export-2.0.md#sdk-explaination)
 
-
-
-原始数据导出为付费功能，且只能导出从开通之日起的原始数据，原始数据仅保留15天，请定期下载。数据导出一般延迟为 30 分钟，比如早上 8 点到 9 点之间的数据，一般 9:30 会准备好。每天凌晨因为需要运行天级别的统计任务，所以导出任务会延迟 1-2 小时，在导出数据时请判断  `status` 字段 。
+原始数据导出为付费功能，且只能导出从开通之日起的原始数据，原始数据仅保留15天，请定期下载。数据导出一般延迟为 30 分钟，比如早上 8 点到 9 点之间的数据，一般 9:30 会准备好。每天凌晨因为需要运行天级别的统计任务，所以导出任务会延迟 1-2 小时，在导出数据时请判断 `status` 字段 。
 
 导出时数据以每 64M 为单位分包发送，导出数据默认采用 gzip 压缩。原始数据中所有时间字段均为 [UTC](http://baike.baidu.com/link?url=T9ER87o8wd_ABq-oRrn839-Q2hxrV5WvIeQX2bJCOAWgne8C8BCw8yRWrISceZJEoR83GuIhdu0vSZFwzl4ngFrD7vUITsrlcY6U3Fj6lWCx7x0xWRTNDFOHkhJmnUW05hrb5df7vvz12EayMr_4b5QJZ1UcTs17ffae3wI18LNeF8j_4WpMZ_srcJHSXhpk) 时间，并非中国时间；此处导出的压缩包名也是由 UTC 时间命名。
 
 在进行原始数据导出之前，请务必参考 [“GrowingIO接口认证”文档](https://docs.growingio.com/api/authentication.html)，完成接口认证获取 token 。
 
-### 1.原始数据导出 2.0 API 功能概要 <a id="summary"></a>
+## 1.原始数据导出 2.0 API 功能概要  <a id="summary"></a>
 
 1. “2.0版”提供了小时级别的原始数据导出。
 
@@ -23,7 +21,7 @@
 2. “2.0版”在包含所有“1.0版”具有的数据表和字段的基础上添加了数据主版本2.0（SDK 2.x）版本具有的自定义事件和变量的数据表和字段，并对包括广告监测数据导出在内的所有数据导出表的字段做了统一处理。
 3. “2.0版”兼容并包含了"1.0版"的所有数据字段。
 
-### 2.原始数据导出 2.0 API 接口定义 <a id="definition"></a>
+## 2.原始数据导出 2.0 API 接口定义  <a id="definition"></a>
 
 {% api-method method="get" host="https://www.growingio.com" path="/v2/insights/:export\_type/${data\_type}/${ai}/${export\_date}.json?expire=${minutes}" %}
 {% api-method-summary %}
@@ -42,9 +40,7 @@
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="data\_type" type="string" required=true %}
-导出数据类型，系统支持一下数据类型的导出，可选值：  
-  
-\* visit: 访问事件  
+导出数据类型，系统支持一下数据类型的导出，可选值：\* visit: 访问事件  
 \* page: 页面事件  
 \* action: 动作事件，包括点击、修改等动作  
 \* action\_tag: 动作事件与圈选规则关联关系  
@@ -52,7 +48,7 @@
 \* ads\_track\_activation: 广告激活事件  
 \* ads\_track\_click: 广告点击事件  
 \* pvar:页面级变量  
-\* evar: 转化变量 
+\* evar: 转化变量
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ai" type="string" required=true %}
@@ -60,9 +56,7 @@
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="export\_date" type="string" required=true %}
-导出数据北京时间，格式为 yyyyMMddHHmm, 表现请求导出哪段时间内的数据，分为以下情况：  
-  
-\* 当 export\_type 为 day 时，只会截取 export\_date 中 yyyyMMdd, 其余将忽略  
+导出数据北京时间，格式为 yyyyMMddHHmm, 表现请求导出哪段时间内的数据，分为以下情况：\* 当 export\_type 为 day 时，只会截取 export\_date 中 yyyyMMdd, 其余将忽略  
 \* 当 export\_type 为 hour 时，只会截取 export\_date 中 yyyyMMddHH, 其余将忽略
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -91,7 +85,7 @@ GrowingIO 分配的公钥，请在 GrowingIO 后台项目管理页面获得。�
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
   "status": "",
   "downloadLinks": [],
@@ -129,9 +123,7 @@ GrowingIO 分配的公钥，请在 GrowingIO 后台项目管理页面获得。�
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="export\_date" type="string" required=true %}
-导出数据北京时间，格式为 yyyyMMddHHmm, 表现请求导出哪段时间内的数据，分为以下情况：  
-  
-\* 当 export\_type 为 day 时，只会截取 export\_date 中 yyyyMMdd，其余将忽略  
+导出数据北京时间，格式为 yyyyMMddHHmm, 表现请求导出哪段时间内的数据，分为以下情况：\* 当 export\_type 为 day 时，只会截取 export\_date 中 yyyyMMdd，其余将忽略  
 \* 当 export\_type 为 hour 时，只会截取 export\_date 中 yyyyMMddHH，其余将忽略
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -159,7 +151,7 @@ GrowingIO 分配的公钥，请在 GrowingIO 后台项目管理页面获得。�
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "FINISHED",
     "downloadLinks": {
@@ -203,7 +195,7 @@ GrowingIO 分配的公钥，请在 GrowingIO 后台项目管理页面获得。�
 * requestTime 客户请求发生时服务器时间
 * errorMsg 当请求发生错误时，服务器返回的错误信息
 
-### 3.原始数据导出版本和GrowingIO数据主版本（SDK 版本）关系 <a id="sdk-explaination"></a>
+## 3.原始数据导出版本和GrowingIO数据主版本（SDK 版本）关系  <a id="sdk-explaination"></a>
 
 ![](https://docs.growingio.com/.gitbook/assets/datafeed.png)
 

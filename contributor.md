@@ -6,7 +6,7 @@ description: 美好的文档由大家共同打造。
 
 ![](.gitbook/assets/wei-xin-tou-tu-10.2822.jpg)
 
-### 感谢以下同学对帮助文档的贡献：
+## 感谢以下同学对帮助文档的贡献：
 
 @Eric
 
@@ -47,8 +47,4 @@ description: 美好的文档由大家共同打造。
 @Benny！
 
 @郭天！
-
-
-
-
 

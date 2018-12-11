@@ -18,11 +18,11 @@
   * [6.6 Onelink API](ads-tracking-api.md#6-6-onelink-api)
   * [6.7 Normallink API](ads-tracking-api.md#6-7-normallink-api)
 
-### 1.概述 <a id="introduction"></a>
+## 1.概述  <a id="introduction"></a>
 
 为满足广大客户更灵活创建广告监测链接的诉求，GrowingIO（以下简称GIO）提供了一套创建监测链接的API。本文档旨在说明一些调用流程，逻辑及相关接口说明。
 
-### 2.名词及概念解释 <a id="terminology"></a>
+## 2.名词及概念解释  <a id="terminology"></a>
 
 GIO广告监测链接信息架构
 
@@ -30,35 +30,35 @@ GIO广告监测链接信息架构
 
 因此，GIO中生成一条监测链接至少需要涵盖以下信息： AI：项目ID，可在项目管理的项目概览里获得这串ID，也是集成 SDK 时 setAccountId 所用的部分。 应用：应用ID。推广应用在GIO后台的分配的唯一应用ID。 推广活动：自定义的一个维度。示例：百度信息流推广，湖南区域推广等。 监测链接：一条链接（或二维码），可跟踪后续的点击，激活等时间。
 
-### 3.系统校验规则说明 <a id="explaination"></a>
+## 3.系统校验规则说明  <a id="explaination"></a>
 
-#### 3.1 AI 与应用相关： <a id="ai-product"></a>
+### 3.1 AI 与应用相关：  <a id="ai-product"></a>
 
 规则一：推广的应用是否隶属于当前AI。
 
-#### 3.2 推广活动相关： <a id="marketing-info"></a>
+### 3.2 推广活动相关：  <a id="marketing-info"></a>
 
 规则一：同AI下推广活动不能重名。 规则二：推广活动名称限制50个字符，仅支持中英文数字-/\_,。
 
-#### 3.3 渠道相关： <a id="channel-info"></a>
+### 3.3 渠道相关：  <a id="channel-info"></a>
 
 规则一：同AI下渠道名称不能重名，包括自定义渠道及系统预定义渠道。 规则二：渠道名称限制50个字符，仅支持中英文数字-/\_,。
 
-#### 3.4 监测链接相关 <a id="link-info"></a>
+### 3.4 监测链接相关  <a id="link-info"></a>
 
 规则一：同AI下监测链接不能重名。 规则二：监测链接名称限制50个字符，仅支持中英文数字-/\_,。 规则三：针对跳转地址有URL基本校验（是否可跳转，格式校验）。 规则四：必填校验。详见后续不同监测链接的创建逻辑。
 
-### 4.使用流程 <a id="user-flow"></a>
+## 4.使用流程  <a id="user-flow"></a>
 
 为保证数据安全，GrowingIO所有的API服务，请求Head中需要携带Token。
 
-Token获取详见：`https://docs.growingio.com/api/authentication.html` 
+Token获取详见：`https://docs.growingio.com/api/authentication.html`
 
-完整的监测链接创建流程见下图： 
+完整的监测链接创建流程见下图：
 
 ![](../.gitbook/assets/growingio_tracking_api_2.png)
 
-### 5.认证说明 <a id="authentication"></a>
+## 5.认证说明  <a id="authentication"></a>
 
 详细的认证过程请参考：[认证说明](https://docs.growingio.com/api/ji-suan-jie-guo-shu-ju-api.html#authorization)
 
@@ -67,13 +67,13 @@ Token获取详见：`https://docs.growingio.com/api/authentication.html`
 | X-Client-Id | String | GrowingIO 分配的公钥，请在GrowingIO后台“项目配置”页面获取 | X-Client-Id: 123abc |
 | Authorization | String | 认证后获取到的 Token | Authorization: Token xxxxxx |
 
-### 6.API接口详细 <a id="api-interface"></a>
+## 6.API接口详细  <a id="api-interface"></a>
 
-#### 6.1 应用 API <a id="app-api"></a>
+### 6.1 应用 API  <a id="app-api"></a>
 
-新建应用请在GIO后台操作，此接口仅提供应用ID的查询。 
+新建应用请在GIO后台操作，此接口仅提供应用ID的查询。
 
-GET `https://www.growingio.com/api/v1/projects/{项目编号}/meta/products` 
+GET `https://www.growingio.com/api/v1/projects/{项目编号}/meta/products`
 
 Response: Status Code: 200 OK
 
@@ -115,11 +115,11 @@ Response 示例：
 ]
 ```
 
-#### 6.2 推广活动相关 API <a id="markerting-api"></a>
+### 6.2 推广活动相关 API  <a id="markerting-api"></a>
 
-此部分相关接口可以查询已有活动的活动ID或者创建新的活动。 
+此部分相关接口可以查询已有活动的活动ID或者创建新的活动。
 
-POST `https://www.growingio.com/api/v1/projects/{项目编号}/meta/campaigns` 
+POST `https://www.growingio.com/api/v1/projects/{项目编号}/meta/campaigns`
 
 Request:
 
@@ -155,7 +155,7 @@ Response: Status Code: 200 OK
 }
 ```
 
-GET `https://www.growingio.com/api/v1/projects/{项目编号}/meta/campaigns` 
+GET `https://www.growingio.com/api/v1/projects/{项目编号}/meta/campaigns`
 
 Response: Status Code: 200 OK
 
@@ -182,11 +182,11 @@ Response 示例：
 ]
 ```
 
-####  6.3 渠道管理 API <a id="channel-api"></a>
+### 6.3 渠道管理 API  <a id="channel-api"></a>
 
-此相关部分API可以进行渠道的ID查询及新建渠道。 
+此相关部分API可以进行渠道的ID查询及新建渠道。
 
-POST `https://www.growingio.com/api/v1/projects/{项目编号}/meta/channels` 
+POST `https://www.growingio.com/api/v1/projects/{项目编号}/meta/channels`
 
 Request:
 
@@ -202,7 +202,7 @@ Request:
 }
 ```
 
-GET `https://www.growingio.com/api/v1/projects/{项目编号}/meta/channels` 
+GET `https://www.growingio.com/api/v1/projects/{项目编号}/meta/channels`
 
 Response: Status Code: 200 OK
 
@@ -226,19 +226,19 @@ Response 示例：
 ]
 ```
 
-#### 6.4 链接创建 API <a id="link-api"></a>
+### 6.4 链接创建 API  <a id="link-api"></a>
 
 GIO目前提供三种类型的监测链接：Normal-Link，One-Link，Deep-Link。
 
- Normal-Link： 最常见的一种监测链接类型。适用于推广单个移动应用，引导用户进行APP的下载。场景包括广告平台投放等。 特别说明：广点通/智汇推/微信广告平台/Inmobi，此四个渠道由于创建过程中需要获取广告平台的相关参数，故不支持API创建以上平台的监测链接。
+Normal-Link： 最常见的一种监测链接类型。适用于推广单个移动应用，引导用户进行APP的下载。场景包括广告平台投放等。 特别说明：广点通/智汇推/微信广告平台/Inmobi，此四个渠道由于创建过程中需要获取广告平台的相关参数，故不支持API创建以上平台的监测链接。
 
-One-Link： 当需要在一条链接里推广两个移动应用（安卓版和iOS版）时，推荐使用 One-Link。适用于短信，微信，邮件等不明用户操作系统的推广场景。 
+One-Link： 当需要在一条链接里推广两个移动应用（安卓版和iOS版）时，推荐使用 One-Link。适用于短信，微信，邮件等不明用户操作系统的推广场景。
 
 Deep-Link： 使用 Deep-Link 技术，已安装用户点击链接即可打开APP，未安装用户点击链接跳转到App Store。适用于通过短信/微信下的优惠券发送召唤用户重新打开并使用APP的场景。
 
 请根据业务场景选择合适的监测链接。
 
-#### **6.5 Deeplink API** <a id="deeplink-api"></a>
+### **6.5 Deeplink API**  <a id="deeplink-api"></a>
 
 Deeplink链接创建逻辑：
 
@@ -341,11 +341,11 @@ Response: Status Code: 200 OK
 }
 ```
 
-#### **6.6 Onelink API**
+### **6.6 Onelink API**
 
 Onelink链接创建逻辑
 
- ![](../.gitbook/assets/growingio_tracking_api_4.png) 
+![](../.gitbook/assets/growingio_tracking_api_4.png)
 
 POST `https://www.growingio.com/api/v1/projects/{项目编号}/meta/onelinks`
 
@@ -434,13 +434,13 @@ Response: Status Code: 200 OK
 }
 ```
 
-#### **6.7 Normallink API**
+### **6.7 Normallink API**
 
 Normallink链接创建逻辑：
 
- ![](https://docs.growingio.com/.gitbook/assets/ads_tracking_api_5.png)
+![](https://docs.growingio.com/.gitbook/assets/ads_tracking_api_5.png)
 
-POST `https://www.growingio.com/api/v1/projects/{项目编号}/meta/normallinks` 
+POST `https://www.growingio.com/api/v1/projects/{项目编号}/meta/normallinks`
 
 Request:
 

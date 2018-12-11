@@ -62,7 +62,7 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%28179%29.png)
+![](../../.gitbook/assets/image-179.png)
 
 ### **场景二：有关联事件级变量的计数器类型场景**
 
@@ -102,7 +102,7 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%28139%29.png)
+![](../../.gitbook/assets/image-139.png)
 
 ### **场景三：无关联事件级变量的数值类型场景**
 
@@ -134,7 +134,7 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%28158%29.png)
+![](../../.gitbook/assets/image-158.png)
 
 ### **场景四：有关联事件级变量的数值类型场景**
 
@@ -174,7 +174,7 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%2836%29.png)
+![](../../.gitbook/assets/image-36.png)
 
 ## **pvar\(**页面级变量**\) 事件**
 
@@ -195,52 +195,50 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 此示例中的页面级变量为“商品名称（skuName\_pvar）”、“商品品类（skuCategory\_pvar）”，在商品详情页面上设置了这两个页面级变量
 
+| 平台 | 方法原型 | 代码示例 |
+| :--- | :--- | :--- |
+
+
+| JS SDK | gio\('page.set', key, value\);或gio\('page.set', pageLevelVariables\); | gio\('page.set', {'skuName\_pvar': '女士中跟凉鞋', 'skuCategory\_pvar': '鞋靴'}\); |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">平台</th>
-      <th style="text-align:left">方法原型</th>
-      <th style="text-align:left">代码示例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">JS SDK</td>
-      <td style="text-align:left">gio('page.set', key, value);或gio('page.set', pageLevelVariables);</td>
-      <td
-      style="text-align:left">gio('page.set', {'skuName_pvar': '女士中跟凉鞋', 'skuCategory_pvar': '鞋靴'});</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Android SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Android SDK</th>
+      <th style="text-align:left">
         <p>GrowingIO.getInstance().setPageVariable(<code>Activity</code> activity, <code>String</code>key, <code>String</code> value);</p>
         <p>或</p>
-        <p>GrowingIO.getInstance().setPageVariable(<code>Activity</code> activity, <code>JSONObject </code>pageLevelVariables);</p>
-      </td>
-      <td style="text-align:left">
+        <p>GrowingIO.getInstance().setPageVariable(<code>Activity</code> activity, <code>JSONObject</code> pageLevelVariables);</p>
+      </th>
+      <th style="text-align:left">
         <p>JSONObject jsonObject = new JSONObject(); jsonObject.put("skuName_pvar",
           "女士中跟凉鞋"); jsonObject.put("skuCategory_pvar", "鞋靴");</p>
         <p>GrowingIO.getInstance().setPageVariable(GoodsDetailActivity, jsonObject);</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">iOS SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">iOS SDK</th>
+      <th style="text-align:left">
         <p>+ (void)setPageVariableWithKey:(NSString *)key
           <br />andStringValue:(NSString *)stringValue
           <br />toViewController:(UIViewController*)viewController;</p>
         <p>或</p>
-        <p>+ (void)setPageVariable:(NSDictionary
-          <NSString *,<br />NSObject *> *)variable toViewController:
-          <br />(UIViewController *)viewController;</p>
-      </td>
-      <td style="text-align:left">[Growing setPageVariable:@{@"skuName_pvar":@"女士中跟凉鞋", @"skuCategory_pvar":@"鞋靴"}
-        toViewController:GoodsDetailViewController];</td>
+        <p>+ (void)setPageVariable:(NSDictionaryNSObject *> *)variable toViewController:
+          <br
+          />(UIViewController *)viewController;</p>
+      </th>
+      <th style="text-align:left">[Growing setPageVariable:@{@"skuName_pvar":@"女士中跟凉鞋", @"skuCategory_pvar":@"鞋靴"}
+        toViewController:GoodsDetailViewController];</th>
     </tr>
-  </tbody>
-</table>### **数据验证方法**
-
-在对应的应用（网站、Android 或者 iOS App）中打开设置了页面级变量的商品详情页，通过 Debugger 工具验证数据准确性
+  </thead>
+  <tbody></tbody>
+</table>在对应的应用（网站、Android 或者 iOS App）中打开设置了页面级变量的商品详情页，通过 Debugger 工具验证数据准确性
 
 按照如下流程图验证
 
@@ -248,7 +246,7 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%2892%29.png)
+![](../../.gitbook/assets/image-92.png)
 
 ## **evar \(**转化变量**\) 事件**
 
@@ -268,57 +266,53 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 此示例中的转化变量为“商品详情页的入口来源（enterSource\_evar）”，当进入详情页时设置了这个转化变量
 
+| 平台 | 方法原型 | 代码示例 |
+| :--- | :--- | :--- |
+
+
+| JS SDK | gio\('evar.set', key, value\);或gio\('evar.set', conversionVariables\); | gio\('evar.set', 'enterSource\_evar', '首页Banner'\);或gio\('evar.set', {'enterSource\_evar': '首页Banner'}\); |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">平台</th>
-      <th style="text-align:left">方法原型</th>
-      <th style="text-align:left">代码示例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">JS SDK</td>
-      <td style="text-align:left">gio('evar.set', key, value);或gio('evar.set', conversionVariables);</td>
-      <td
-      style="text-align:left">gio('evar.set', 'enterSource_evar', '首页Banner');或gio('evar.set', {'enterSource_evar':
-        '首页Banner'});</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Android SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Android SDK</th>
+      <th style="text-align:left">
         <p>GrowingIO.getInstance().setEvar(String key, String value);</p>
         <p>或</p>
         <p>GrowingIO.getInstance().setEvar(JSONObject conversionVariables);</p>
-      </td>
-      <td style="text-align:left">
+      </th>
+      <th style="text-align:left">
         <p>GrowingIO.getInstance().setEvar("enterSource_evar", "首页Banner");</p>
         <p>或</p>
         <p>JSONObject jsonObject = new JSONObject();</p>
         <p>jsonObject.put("enterSource_evar", "首页Banner");</p>
         <p>GrowingIO.getInstance().setEvar(jsonObject);</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">iOS SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">iOS SDK</th>
+      <th style="text-align:left">
         <p>+ (void)setEvarWithKey:(NSString *)key
           <br />andStringValue:(NSString *)stringValue;</p>
         <p>或</p>
-        <p>+ (void)setEvar:(NSDictionary
-          <NSString *, NSObject *>*)variable;</p>
-      </td>
-      <td style="text-align:left">
+        <p>+ (void)setEvar:(NSDictionary*)variable;</p>
+      </th>
+      <th style="text-align:left">
         <p>[Growing setEvarWithKey:@"enterSource_evar"
           <br />andStringValue:@"首页Banner"];</p>
         <p>或</p>
         <p>[Growing setEvar:@{@"enterSource_evar":@"首页Banner"}];</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>### **数据验证方法**
-
-在对应的应用（网站、Android 或者 iOS App）中触发设置了转化变量的时机，通过 Debugger 工具验证数据准确性
+  </thead>
+  <tbody></tbody>
+</table>在对应的应用（网站、Android 或者 iOS App）中触发设置了转化变量的时机，通过 Debugger 工具验证数据准确性
 
 按照如下流程图验证
 
@@ -326,7 +320,7 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image-4%20%281%29.png)
 
 ## **ppl \(**用户变量**\) 事件**
 
@@ -344,64 +338,68 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 此示例中的用户变量为登录用户ID，在用户登录时设置
 
+| 平台 | 方法原型 | 代码示例 |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">平台</th>
-      <th style="text-align:left">方法原型</th>
-      <th style="text-align:left">代码示例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">JS SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">JS SDK</th>
+      <th style="text-align:left">
         <p>// 用户登录时，设置登录用户ID</p>
         <p>gio('setUserId', userId);</p>
         <p>// 用户退出登录时，清除登录用户ID</p>
         <p>gio('clearUserId');</p>
-      </td>
-      <td style="text-align:left">
+      </th>
+      <th style="text-align:left">
         <p>// 用户登录时，设置登录用户ID</p>
         <p>gio('setUserId', '123456');</p>
         <p>// 用户退出登录时，清除登录用户ID</p>
         <p>gio('clearUserId');</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">Android SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Android SDK</th>
+      <th style="text-align:left">
         <p>//用户登录时，设置登录用户ID</p>
         <p>GrowingIO.getInstance().setUserId(String userId);</p>
         <p>//用户退出登录时，清除登录用户ID</p>
         <p>GrowingIO.getInstance().clearUserId();</p>
-      </td>
-      <td style="text-align:left">
+      </th>
+      <th style="text-align:left">
         <p>//用户登录时，设置登录用户ID</p>
         <p>GrowingIO.getInstance().setUserId("123456");</p>
         <p>//用户退出登录时，清除登录用户ID</p>
         <p>GrowingIO.getInstance().clearUserId();</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">iOS SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">iOS SDK</th>
+      <th style="text-align:left">
         <p>//用户登录时，设置登录用户ID</p>
         <p>+ (void)setUserId:(NSString *)userId;</p>
         <p>//用户退出登录时，清除登录用户ID</p>
         <p>+ (void)clearUserId;</p>
-      </td>
-      <td style="text-align:left">
+      </th>
+      <th style="text-align:left">
         <p>//用户登录时，设置登录用户ID</p>
         <p>[Growing setUserId:@"123456"];</p>
         <p>//用户退出登录时，清除登录用户ID</p>
         <p>[Growing clearUserId];</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>#### **数据验证方法**
-
-在对应的应用（网站、Android 或者 iOS App）中的进行登录、退出登录、切换账号登录的操作，通过 Debugger 工具验证数据准确性
+  </thead>
+  <tbody></tbody>
+</table>在对应的应用（网站、Android 或者 iOS App）中的进行登录、退出登录、切换账号登录的操作，通过 Debugger 工具验证数据准确性
 
 按照如下流程图验证
 
@@ -409,9 +407,9 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../../.gitbook/assets/image-24.png)
 
-![](../../.gitbook/assets/image%20%28137%29.png)
+![](../../.gitbook/assets/image-137.png)
 
 ### **场景二：其他用户变量**
 
@@ -430,50 +428,47 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 此示例中的用户变量为“用户性别（gender\_ppl）”、“用户年龄（age\_ppl）”，在用户登录或者变量值发生变化时进行设置
 
+| 平台 | 方法原型 | 代码示例 |
+| :--- | :--- | :--- |
+
+
+| JS SDK | gio\('people.set', key, value\);或gio\('people.set', customerVariables\); | gio\('people.set', {'gender\_ppl': '男', 'age\_ppl': 25}\); |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">平台</th>
-      <th style="text-align:left">方法原型</th>
-      <th style="text-align:left">代码示例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">JS SDK</td>
-      <td style="text-align:left">gio('people.set', key, value);或gio('people.set', customerVariables);</td>
-      <td
-      style="text-align:left">gio('people.set', {'gender_ppl': '男', 'age_ppl': 25});</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Android SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Android SDK</th>
+      <th style="text-align:left">
         <p>GrowingIO.getInstance().setPeopleVariable(String key, String value);</p>
         <p>或</p>
         <p>GrowingIO.getInstance().setPeopleVariable(JSONObject peopleVariables);</p>
-      </td>
-      <td style="text-align:left">
+      </th>
+      <th style="text-align:left">
         <p>JSONObject jsonObject = new JSONObject();</p>
         <p>jsonObject.put("gender_ppl", "男");</p>
         <p>jsonObject.put("age_ppl", 25);</p>
         <p>GrowingIO.getInstance().setPeopleVariable(jsonObject);</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">iOS SDK</td>
-      <td style="text-align:left">
+      <th style="text-align:left">iOS SDK</th>
+      <th style="text-align:left">
         <p>+ (void)setPeopleVariableWithKey:(NSString *)key
           <br />andStringValue:(NSString *)stringValue;</p>
         <p>或</p>
-        <p>+ (void)setPeopleVariable:(NSDictionary
-          <NSString *, NSObject *>*)variable;</p>
-      </td>
-      <td style="text-align:left">[Growing setPeopleVariable:@{@"gender_ppl":@"男", @"age_ppl":@25}];</td>
+        <p>+ (void)setPeopleVariable:(NSDictionary*)variable;</p>
+      </th>
+      <th style="text-align:left">[Growing setPeopleVariable:@{@"gender_ppl":@"男", @"age_ppl":@25}];</th>
     </tr>
-  </tbody>
-</table>#### **数据验证方法**
-
-在对应的应用（网站、Android 或者 iOS App）中触发对应的用户变量，通过 Debugger 工具验证数据准确性
+  </thead>
+  <tbody></tbody>
+</table>在对应的应用（网站、Android 或者 iOS App）中触发对应的用户变量，通过 Debugger 工具验证数据准确性
 
 按照如下流程图验证
 
@@ -481,5 +476,5 @@ Debugger 安装/打开方式请见：[Web Debugger](./#growingio-web-debugger)�
 
 在本例中，如下图的数据请求说明打点代码生效
 
-![](../../.gitbook/assets/image%20%2887%29.png)
+![](../../.gitbook/assets/image-87.png)
 

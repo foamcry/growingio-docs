@@ -14,5 +14,3 @@ GrowingIO 提供了如下自定义数据。
 
 {% page-ref page="../data-model/event-model/custom-event/" %}
 
-
-

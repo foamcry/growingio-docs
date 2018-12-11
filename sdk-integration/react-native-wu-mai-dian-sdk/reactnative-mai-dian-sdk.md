@@ -53,13 +53,11 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-
-
 ## iOS 集成
 
 ### 1. **添加 iOS 埋点 SDK 依赖**
 
-React  Native 埋点 SDK 是在 iOS 原生 SDK 上的扩展，请参照 [iOS 埋点 SDK 集成步骤 1~3 ](../ios-sdk/mai-dian-sdk-ji-cheng.md#mai-dian-sdk-ji-cheng)，操作完全一致。
+React Native 埋点 SDK 是在 iOS 原生 SDK 上的扩展，请参照 [iOS 埋点 SDK 集成步骤 1~3 ](../ios-sdk/mai-dian-sdk-ji-cheng.md#mai-dian-sdk-ji-cheng)，操作完全一致。
 
 ### 2. 集成 React Native 打点 SDK
 
@@ -68,10 +66,11 @@ npm install --save https://github.com/growingio/react-native-growingio.git#0.0.6
 ```
 
 ```bash
-react-native link react-native-growingio 
+react-native link react-native-growingio
 ```
 
 {% hint style="info" %}
+
 如果`react-native link react-native-growingio`失败
 
 （成功则忽略此步骤），即发现`Libraries`中没有`GrowingIORNPlugin.xcodeproj`，则可手动配置：
@@ -79,7 +78,6 @@ react-native link react-native-growingio
 1. 打开 XCode 工程中, 右键点击 Libraries 文件夹 ➜ Add Files to &lt;...&gt; 
 2. 去 `node_modules`  ➜ `react-native-growingio` ➜ iOS ➜ 选择 `GrowingIORNPlugin.xcodeproj` 
 3. 在工程`Build Phases` ➜ `Link Binary With Libraries`中添加`libGrowingIORNPlugin.a`
-{% endhint %}
 
 ### **3. 重要配置**
 
@@ -87,13 +85,9 @@ react-native link react-native-growingio
 
 * \*\*\*\*[**App Store 提交应用注意事项**](../ios-sdk/#zai-app-store-ti-jiao-ying-yong)\*\*\*\*
 
-
-
 ## 自定义事件和变量API
 
 [同 React Native 无埋点版本的 API 。](./#zi-ding-yi-shi-jian-he-bian-liang-api)
-
-
 
 ## 验证 SDK 是否正常工作
 
@@ -115,13 +109,9 @@ GrowingIO.startWithConfiguration(this,new Configuration()
     );
 ```
 
-    3. iOS 查看日志：iOS 在 AppDelegate 文件中配置：
+1. iOS 查看日志：iOS 在 AppDelegate 文件中配置：
 
 ```objectivec
 [Growing setEnableLog:YES];
 ```
-
-
-
-
 

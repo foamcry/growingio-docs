@@ -4,7 +4,7 @@ description: 提供项目配置和管理
 
 # 项目管理 API
 
-### 1. 用户管理 API
+## 1. 用户管理 API
 
 {% api-method method="post" host="https://www.growingio.com" path="/api/v1/projects/:project\_id/accounts/delete" %}
 {% api-method-summary %}
@@ -12,7 +12,7 @@ description: 提供项目配置和管理
 {% endapi-method-summary %}
 
 {% api-method-description %}
- 通过邮箱删除用户，用于清理项目内失效用户
+通过邮箱删除用户，用于清理项目内失效用户
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -46,7 +46,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success"
 }
@@ -55,10 +55,10 @@ GrowingIO 分配的公钥
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
- 请求失败，message 中会有错误消息
+请求失败，message 中会有错误消息
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "fail",
     "message": "error message"
@@ -68,10 +68,10 @@ GrowingIO 分配的公钥
 
 {% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
- 认证失败
+认证失败
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -79,9 +79,7 @@ GrowingIO 分配的公钥
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
-### 2. 打点事件管理 API
+## 2. 打点事件管理 API
 
 通过接口获取打点事件信息，创建打点事件。
 
@@ -119,7 +117,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 [
     {
         "id": "id1", // 事件 uid
@@ -208,7 +206,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -258,7 +256,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 [
     {
         "id": "id1", // 打点维度 uid
@@ -328,7 +326,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -370,7 +368,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 [
   {
         "id": "id1", // 变量 uid
@@ -437,7 +435,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -479,7 +477,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 [
    {
         "id": "id1", // 变量 uid
@@ -550,7 +548,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -592,7 +590,7 @@ GrowingIO 分配的公钥
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "event": 50000, // 打点事件限额
     "var": 100, // 事件级变量限额

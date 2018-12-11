@@ -8,5 +8,3 @@ description: 提供基于内容点击的热图，行为分析更加准确。
 
 {% page-ref page="heatmap-app.md" %}
 
-
-

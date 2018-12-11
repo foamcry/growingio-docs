@@ -2,7 +2,7 @@
 
 为符合 GDPR 规范，GrowingIO 提供删除用户原始数据的功能。
 
-### 删除用户API
+## 删除用户API
 
 从原始数据中删除用户的数据，支持批量删除。
 
@@ -19,7 +19,7 @@
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="projectId" type="string" required=true %}
- 项目ID
+项目ID
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -52,7 +52,7 @@ user id
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -68,7 +68,7 @@ Body由多个visitUserId组成，一次性最多上传 100 条，大小最大限
 }
 ```
 
-#### 认证
+### 认证
 
 为防止误传和恶意攻击， GrowingIO 服务器会对收到的每条数据做校验，因此需要在 query 参数中提供校验码 auth。校验码生成代码见下方示例，其中 keyArray 为 visitUserId，一次性上传多条时，使用逗号隔开，如上方示例中，keyArray为`abcdef,bcdefg` 。
 
@@ -86,11 +86,9 @@ public String authToken(String projectKeyId, String secretKey, String keyArray) 
 
 > 其他语言可以参考[用户变量上传 API](user-property-upload.md#2-ren-zheng)
 
-#### 特别说明
+### 特别说明
 
 * user id 是 GrowingIO SDK 生成的 cookie，您可以从导出的原始数据中获得。
 * 删除用户数据后，该部分用户的细节数据\(包括用户细查数据、以该部分用户ID做数据查询\) 都不会保留在GrowingIO平台；但汇总数据（比如 "访问用户量" ）不会受影响。
 * 汇总数据不受影响的原因：GrowingIO收到该用户数据后启动汇总数据计算，这个过程是不可逆的。删除用户数据请求是在用户数据发送至GrowingIO之后的操作，该请求不会影响前置的汇总数据计算。请您知晓，汇总数据不受影响跟GDPR的要求没有任何相悖。
-
-
 

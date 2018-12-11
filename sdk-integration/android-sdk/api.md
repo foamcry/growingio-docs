@@ -46,8 +46,6 @@ public class MyApplication extends Application {
 }
 ```
 
-
-
 ### 基础配置 API
 
 <table>
@@ -88,11 +86,9 @@ public class MyApplication extends Application {
       <td style="text-align:left">2.6.0中删除</td>
     </tr>
   </tbody>
-</table>
+</table>### SDK 功能API
 
-### SDK 功能API
-
-| 初始化配置项API | 默认值                    | 说明 | 版本                           |
+| 初始化配置项API | 默认值 | 说明 | 版本 |
 | :--- | :--- | :--- | :--- |
 | setDeeplinkCallback | 无 | DeepLink 回调接口，获得自定义参数以便跳转对应 APP页 面 | 2.3.2 以上 |
 | setTrackWebView | true | 是否采集全部的`WebView,`设置为`false`时不采所有`WebView`数据 | 2.6.0 中删除 |
@@ -101,11 +97,9 @@ public class MyApplication extends Application {
 | trackAllFragments | false | 是否采集所有Fragment |  |
 | setHashTagEnable | false | 在`WebView`中的页面访问，是否认为点击锚点链接是一个页面浏览 |  |
 
-
-
 ### 数据采集发送 API
 
-| 初始化配置项API | 默认值                                                        | 说明 |
+| 初始化配置项API | 默认值 | 说明 |
 | :--- | :--- | :--- |
 | setDisabled | false | SDK 是否采集数据，设置为`true`时不采集数据 |
 | setSampling | 1 | 采样率\[0.01~1\],若设置sampling = 0.01，则 1% 的设备会被采集数据，每次启动会根据用户设置的采样率判断设备是否在采集的范围之内，**使用之前请咨询技术支持** |
@@ -116,10 +110,6 @@ public class MyApplication extends Application {
 | disableCellularImp | false | 否关闭移动蜂窝网`imp`事件采集，`imp`为元素展示事件 |
 | setCellularDataLimit | 3 \* 1024 \* 1024 | 一天的时间之内，在移动蜂窝网下的数据最大传输量，默认3M。 |
 | setBulkSize | 300 | 如果数据库存储数据条数大于等于`bulkSize`，则马上发送数据。 |
-
-
-
-
 
 ## GrowingIO 运行时 API
 
@@ -134,8 +124,6 @@ gio.setUserId("张溪梦");
 {% hint style="danger" %}
 GrowingIO 所有 API 都需要在主线程调用。
 {% endhint %}
-
-
 
 ### 基础配置 API
 
@@ -189,143 +177,119 @@ GrowingIO 所有 API 都需要在主线程调用。
       </td>
     </tr>
   </tbody>
-</table>
+</table>### 数据采集 API
 
-### 数据采集 API 
+| 运行时API | 说明 | 版本 |
+| :--- | :--- | :--- |
+
+
+| disableDataCollect | 遵守欧洲联盟出台的通用数据保护条例，用户不授权，不采集用户数据 | 2.3.2 以上 |
+| :--- | :--- | :--- |
+
+
+| enableDataCollect | 遵守欧洲联盟出台的通用数据保护条例，用户授权，采集用户数据 | 2.3.2 以上 |
+| :--- | :--- | :--- |
+
+
+| disable | GrowingIO 停止采集 |  |
+| :--- | :--- | :--- |
+
+
+| resume | GrowingIO 恢复采集 |  |
+| :--- | :--- | :--- |
+
+
+| stop | GrowingIO 停止采集，可以不在主线程调用 |  |
+| :--- | :--- | :--- |
+
+
+| setThrottle | 是否节流发送（节流发送时imp不发送），内部实际调用 Configuration 中的同名方法，所以在初始化时候配置和运行时动态配置，效果一样。 |  |
+| :--- | :--- | :--- |
+
+
+| setImp |  `imp`事件开关，`true` 为打开 |  |
+| :--- | :--- | :--- |
+
+
+| disableImpression | 不发送 `imp` |  |
+| :--- | :--- | :--- |
+
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">运行时API</th>
-      <th style="text-align:left">说明</th>
-      <th style="text-align:left">版本</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">disableDataCollect</td>
-      <td style="text-align:left">遵守欧洲联盟出台的通用数据保护条例，用户不授权，不采集用户数据</td>
-      <td style="text-align:left">2.3.2 以上</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">enableDataCollect</td>
-      <td style="text-align:left">遵守欧洲联盟出台的通用数据保护条例，用户授权，采集用户数据</td>
-      <td style="text-align:left">2.3.2 以上</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">disable</td>
-      <td style="text-align:left">GrowingIO 停止采集</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">resume</td>
-      <td style="text-align:left">GrowingIO 恢复采集</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">stop</td>
-      <td style="text-align:left">GrowingIO 停止采集，可以不在主线程调用</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">setThrottle</td>
-      <td style="text-align:left">是否节流发送（节流发送时imp不发送），内部实际调用 Configuration 中的同名方法，所以在初始化时候配置和运行时动态配置，效果一样。</td>
-      <td
-      style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">setImp</td>
-      <td style="text-align:left"> <code>imp</code>事件开关，<code>true</code> 为打开</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">disableImpression</td>
-      <td style="text-align:left">不发送 <code>imp</code>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">ignoredView</td>
-      <td style="text-align:left">
+      <th style="text-align:left">ignoredView</th>
+      <th style="text-align:left">
         <p>忽略配置的 View ，不采集用户数据。</p>
         <p>如果您需要忽略某些特殊内容，比如倒计时元素或涉及隐私的内容，可以使用该功能。</p>
-      </td>
-      <td style="text-align:left"></td>
+      </th>
+      <th style="text-align:left"></th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table>| ignoreFragment | 不采集配置的 Fragment 页面浏览事件（`page`），不将`Fragment`视作一个页面，可以理解成当作为一个可点击的view。自动采集用户行为事件（`clck、chng`）和元素展示事件（`imp`）。 |  |
+| :--- | :--- | :--- |
+
+
+<table>
+  <thead>
     <tr>
-      <td style="text-align:left">ignoreFragment</td>
-      <td style="text-align:left">不采集配置的 Fragment 页面浏览事件（<code>page</code>），不将<code>Fragment</code>视作一个页面，可以理解成当作为一个可点击的view。自动采集用户行为事件（<code>clck&#x3001;chng</code>）和元素展示事件（<code>imp</code>）。</td>
-      <td
-      style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">setPageName</td>
-      <td style="text-align:left">
+      <th style="text-align:left">setPageName</th>
+      <th style="text-align:left">
         <p>设置页面别名，有些时候，对于完成某个功能的页面，统计时可能需要进一步细分。 比如，对于展示商品列表的页面，需要区分衣物类商品，以及食品类商品的两种列表的访问量。</p>
-        <p></p>
         <p>注意</p>
         <ol>
           <li>必须在该<code>Activity</code>的<code>onCreate</code>方法中完成该属性的赋值操作。</li>
           <li>页面别名只能设置为字母、数字和下划线的组合。</li>
           <li>为查看数据方便，请尽量对iOS和安卓的同功能页面取不同的名称。</li>
         </ol>
-      </td>
-      <td style="text-align:left"></td>
+      </th>
+      <th style="text-align:left"></th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table>| getSessionId | 得到 session id |  |
+| :--- | :--- | :--- |
+
+
+| getDeviceId | 获取设备id，对应数据采集的`u`字段，又称为`匿名用户id`，用来定义一台设备，SDK 自动生成。 |  |
+| :--- | :--- | :--- |
+
+
+| [trackBanner](./#cai-ji-guang-gao-banner-shu-ju) | [设置所有广告图对应的广告内容描述，内容描述需要跟广告的顺序相同。](./#cai-ji-guang-gao-banner-shu-ju) |  |
+| :--- | :--- | :--- |
+
+
+<table>
+  <thead>
     <tr>
-      <td style="text-align:left">getSessionId</td>
-      <td style="text-align:left">得到 session id</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">getDeviceId</td>
-      <td style="text-align:left">获取设备id，对应数据采集的<code>u</code>字段，又称为<code>&#x533F;&#x540D;&#x7528;&#x6237;id</code>，用来定义一台设备，SDK
-        自动生成。</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="./#cai-ji-guang-gao-banner-shu-ju">trackBanner</a>
-      </td>
-      <td style="text-align:left"><a href="./#cai-ji-guang-gao-banner-shu-ju">设置所有广告图对应的广告内容描述，内容描述需要跟广告的顺序相同。</a>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">​<a href="./#cai-ji-shu-ru-kuang-shu-ju">trackEditText</a>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left">​<a href="./#cai-ji-shu-ru-kuang-shu-ju">trackEditText</a>
+      </th>
+      <th style="text-align:left">
         <p>​<a href="./#cai-ji-shu-ru-kuang-shu-ju">SDK 默认不采集用户输入框的内容，设置以后，采集除了密码以外的输入框文本内容。​</a>
         </p>
         <p>当这个输入框失去焦点（包括应用退到后台），且输入框内容跟获取焦点前相比发生变化时，输入框内文字会被发送回GrowingIO。</p>
         <p>注意：对于密码输入框，即便标记为需要采集，SDK也会忽略，不采集它的数据。</p>
-      </td>
-      <td style="text-align:left"></td>
+      </th>
+      <th style="text-align:left"></th>
     </tr>
-    <tr>
-      <td style="text-align:left">trackFragment</td>
-      <td style="text-align:left">如果APP初始化时候，没有设置 <code>trackAllFragment</code> 即不采集全部 <code>Fragment</code>，可以选择性采集指定 <code>Fragment</code>，设置之后
-        sdk 将监听 <code>Fragment</code> 的各个生命周期， 采集相关用户行为数据。</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">trackWebView</td>
-      <td style="text-align:left">采集 <code>WebView</code> 事件，默认采集，您可以在不全量采集<code>WebView</code>的时候，定制采集某个<code>WebView</code>
-      </td>
-      <td style="text-align:left">2.6.0 中删除</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">trackX5WebView</td>
-      <td style="text-align:left">采集 X5WebView 事件，默认采集</td>
-      <td style="text-align:left">2.6.0 中删除</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">setTabName</td>
-      <td style="text-align:left">如果您有某些View动态添加到ViewTree中并且在父容器中的位置不固定（例如常见的多Fragment实现的Tab切换），请给每个View设置ID来辅助统计</td>
-      <td
-      style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>### 
+  </thead>
+  <tbody></tbody>
+</table>| trackFragment | 如果APP初始化时候，没有设置 `trackAllFragment` 即不采集全部 `Fragment`，可以选择性采集指定 `Fragment`，设置之后 sdk 将监听 `Fragment` 的各个生命周期， 采集相关用户行为数据。 |  |
+| :--- | :--- | :--- |
+
+
+| trackWebView | 采集 `WebView` 事件，默认采集，您可以在不全量采集`WebView`的时候，定制采集某个`WebView` | 2.6.0 中删除 |
+| :--- | :--- | :--- |
+
+
+| trackX5WebView | 采集 X5WebView 事件，默认采集 | 2.6.0 中删除 |
+| :--- | :--- | :--- |
+
+
+| setTabName | 如果您有某些View动态添加到ViewTree中并且在父容器中的位置不固定（例如常见的多Fragment实现的Tab切换），请给每个View设置ID来辅助统计 |  |
+| :--- | :--- | :--- |
+
 
 ### 自定义事件和变量API
 

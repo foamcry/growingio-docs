@@ -100,9 +100,9 @@ tblproperties ("skip.header.line.count"="1", "quote.delim"="\"", "escape.delim"=
 
 ```text
 val df = spark.read
-	.option("header","true")
-	.option("escape", "\\")
-	.option("quote", "\"")
-	.csv("filePath")
+    .option("header","true")
+    .option("escape", "\\")
+    .option("quote", "\"")
+    .csv("filePath")
 ```
 

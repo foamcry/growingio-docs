@@ -6,8 +6,8 @@
   * [1. 下载小程序采集SDK](mina-sdk.md#xia-zai-xiao-cheng-xu-cai-ji-sdk)
   * ​[2. 添加跟踪代码​](mina-sdk.md#tian-jia-gen-zong-dai-ma)
     * [2.1 若有Webview，请在Webview中添加代码](mina-sdk.md#xiao-cheng-xu-zhong-you-webview)
-  * ​[3. ](/docs/~/drafts/-LH8-yUMU-sgLDUogqkP/primary/sdk-integration/ios-sdk#3-qian-yi-ye-mian-shu-xing-zi-duan-ps-zi-duan)[添加请求服务器域名](mina-sdk.md#tian-jia-qing-qiu-fu-wu-qi-yu-ming)
-  * ​[4. ](/docs/~/drafts/-LH8-yUMU-sgLDUogqkP/primary/sdk-integration/ios-sdk#4-qian-yi-zi-ding-yi-shi-jian-mai-dian-shi-jian)[检测数据](mina-sdk.md#jian-ce-shu-ju)
+  * ​[3. ](https://github.com/foamcry/growingio-docs/tree/8e02d24ca9c021546cab878c4f7f685f6166bc0e/docs/~/drafts/-LH8-yUMU-sgLDUogqkP/primary/sdk-integration/ios-sdk/README.md#3-qian-yi-ye-mian-shu-xing-zi-duan-ps-zi-duan)[添加请求服务器域名](mina-sdk.md#tian-jia-qing-qiu-fu-wu-qi-yu-ming)
+  * ​[4. ](https://github.com/foamcry/growingio-docs/tree/8e02d24ca9c021546cab878c4f7f685f6166bc0e/docs/~/drafts/-LH8-yUMU-sgLDUogqkP/primary/sdk-integration/ios-sdk/README.md#4-qian-yi-zi-ding-yi-shi-jian-mai-dian-shi-jian)[检测数据](mina-sdk.md#jian-ce-shu-ju)
 * [SDK高级设置](mina-sdk.md#sdk-gao-ji-she-zhi-shu-ju-cai-ji-pei-zhi)
   * ​[小程序SDK 微信用户属性设置](mina-sdk.md#sdk-wei-xin-yong-hu-shu-xing-she-zhi)
   * [无埋点采集事件逻辑和高级配置](mina-sdk.md#wu-mai-dian-cai-ji-shi-jian-luo-ji-he-gao-ji-pei-zhi)
@@ -21,11 +21,9 @@
 
 如果你已经注册 GrowingIO，使用小程序分析功能需要用一个全新的项目，在你的 GrowingIO 项目页面点击右上角项目切换控件，在下拉框点击“**项目管理”**，在弹出的列表中选择“**项目概览**“。在项目概览页面，点击“**新建项目**“来创建一个新项目。在创建好的新项目里，你会看到使用引导，点击“**添加跟踪代码**“即可开始。
 
-![&#x9879;&#x76EE;&#x6982;&#x89C8;](../.gitbook/assets/image%20%28154%29.png)
+![&#x9879;&#x76EE;&#x6982;&#x89C8;](../.gitbook/assets/image-154.png)
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LGyRLnN1UW6BL8O3mEr%2F-LGySTNxnseL1EsH7kN8%2Fimage.png?alt=media&token=91d05ea5-95d4-4104-b228-0f1837d5201b)
-
-
 
 在代码集成页面，选择“**小程序**“平台，输入**应用名称**和**小程序 AppID**，点击下一步。
 
@@ -116,8 +114,6 @@ gio('init', '你的 GrowingIO 项目ID', '你的微信小程序的 AppID', { vue
 {% hint style="info" %}
 forceLogin 是一个需要特别注意的参数。GrowingIO 默认会在小程序里面设置用户标识符，存储在微信 Storage 里面。这个用户标识符潜在可能会被`clearStorage` 清除掉，所以有可能不同的用户标识符对应同一个微信里的 `openid`。如果你的微信小程序在用户打开后会去做登录并且获取 `openid` 和/或 `unionid`，可以设置 `forceLogin` 为 true。当 forceLogin 为 true 的时候，用户标识符会使用 openid，潜在风险是如果用户没有登录，数据不会发送。具体集成示例：
 
-
-
 ```text
 gio('init', '你的 GrowingIO 项目ID', '你的微信小程序的 AppID', { version: '1.0', forceLogin: true });
 ...
@@ -177,9 +173,9 @@ Page({
 
 1. 登陆微信小程序后台，进入配置
 2. 打开开发设置，到服务器域名配置部分
-3. 在`request合法域名`中添加：https://wxapi.growingio.com
+3. 在`request合法域名`中添加：[https://wxapi.growingio.com](https://wxapi.growingio.com)
 
-![SDK &#x6DFB;&#x52A0;&#x670D;&#x52A1;&#x5668;&#x57DF;&#x540D;](../.gitbook/assets/image%20%28172%29.png)
+![SDK &#x6DFB;&#x52A0;&#x670D;&#x52A1;&#x5668;&#x57DF;&#x540D;](../.gitbook/assets/image-172.png)
 
 ### 检测数据
 
@@ -201,7 +197,6 @@ Page({
 var gio = require("utils/gio-minp.js");
 // version 是你的小程序的版本号，发版时请调整
 gio('init', '你的 GrowingIO 项目ID', '你的微信小程序的 AppID', { version: '1.0', followShare: true });
-
 ```
 
 对于 mpvue 用户，使用下面这种方式：
@@ -218,7 +213,7 @@ gio('init', '你的 GrowingIO 项目ID', '你的微信小程序的 AppID', { vue
 
 作为用户行为数据分析工具，用户信息的完善会给后续的分析带来很大的帮助。在小程序中，微信用户属性是非常重要的设置，只有完善了微信用户属性信息，微信的访问用户变量（如下表）才可以在分析工具中使用，交互数据定义、数据校验功能才会方便通过用户微信相关的信息（微信姓名和头像）定位用户。
 
-![&#x5FAE;&#x4FE1;&#x8BBF;&#x95EE;&#x7528;&#x6237;&#x53D8;&#x91CF;](../.gitbook/assets/image%20%2884%29.png)
+![&#x5FAE;&#x4FE1;&#x8BBF;&#x95EE;&#x7528;&#x6237;&#x53D8;&#x91CF;](../.gitbook/assets/image-84.png)
 
 下面是专门针对用户的三个接口。
 
@@ -260,7 +255,7 @@ wx.getUserInfo({
 当用户在你的小程序上注册以后，你的产品应用服务端会在用户数据库里添加一条记录并且分配一个 ID，可以通过 setUserId 接口设置注册用户ID，后续在 GrowingIO 中分析登录用户这个数据。示例代码如下，
 
 ```text
-gio('setUserId', YOUR_USER_ID); 
+gio('setUserId', YOUR_USER_ID);
 ```
 
 ### 无埋点采集事件逻辑和高级配置
@@ -364,11 +359,11 @@ GrowingIO 预置了两个小程序的标准自定义事件：分享到群聊或�
 
 **微信小程序分享到好友或群聊信息**
 
-![](../.gitbook/assets/image%20%2875%29.png)
+![](../.gitbook/assets/image-75.png)
 
 **程序错误**
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image-17.png)
 
 ### 自定义事件配置
 
@@ -432,8 +427,6 @@ getApp().globalData.gio('setVisitor', {
 
 ### 注册用户变量
 
-
-
 给注册用户附上额外的信息，便于后续做用户信息相关分析。在添加所需要设置的注册用户变量的代码之前，需要在 GrowingIO 产品的`自定义事件和变量`管理页面配置注册用户级变量。
 
 接口定义：
@@ -492,7 +485,7 @@ Page({
 }
 ```
 
-###  转化变量
+### 转化变量
 
 高级功能，设置一个转化信息用于高级归因分析，目前支持归因方式有最初归因、最终归因和线下归因。举个例子，如果一个用户是先后通过`活动A`、`活动B`、`活动C`来访问小程序，最后在某次后续几天后的访问购买了某个商品。如果把活动A/B/C分别设置为转化变量`campaign`的值，那么如果采用了最初归因，那么这个购买行为是由 A 贡献的；如果是最终归因，那么这次购买行为是 C 贡献的；如果是线性归因，那么这次购买行为是 A/B/C 各占 1/3 贡献。在添加所需要设置的转化变量的代码之前，需要在 GrowingIO 产品的`自定义事件和变量`管理页面配置转化级变量。
 
@@ -516,8 +509,4 @@ getApp().globalData.gio('setEvar', {
   campaign: '活动A'
 });
 ```
-
-
-
-
 

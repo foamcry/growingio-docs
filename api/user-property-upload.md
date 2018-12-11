@@ -6,7 +6,7 @@
 
 GrowingIO 支持通过离线的方式批量上传登录用户变量，配合 SDK 中上传的登录用户 id，可以在不发版的情况下更新用户变量规则。
 
-### 1. 接口
+## 1. 接口
 
 {% api-method method="post" host="https://data.growingio.com/:ai/loginUserId" path="" %}
 {% api-method-summary %}
@@ -62,7 +62,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -99,7 +99,7 @@ Body 内的 userProperty 1-N 为您在 GrowingIO 系统内定义的用户属性�
 ]
 ```
 
-### 2. 认证
+## 2. 认证
 
 为防止误传和恶意攻击， GrowingIO 服务器会对收到的每条数据做校验，因此需要在 query 参数中提供校验码。校验码生成代码见下方示例，其中 keyArray 为 loginUserId，一次性上传多条时，使用逗号隔开，如上方示例中，第一条 keyArray 为 `1234`，第二条为 `1234,1235`。
 
@@ -150,9 +150,7 @@ function authToken($projectKeyId, $secretKey, $keyArray)
 }
 ```
 
-
-
-### 3. 旧版本上传接口
+## 3. 旧版本上传接口
 
 之前使用旧版本上传接口的请尽快升级到新版本接口，避免数据上传结果和线上配置出现不一致。
 
@@ -196,7 +194,7 @@ function authToken($projectKeyId, $secretKey, $keyArray)
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}

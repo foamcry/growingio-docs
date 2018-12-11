@@ -22,7 +22,7 @@ GitHub Demo ： [https://github.com/growingio/ReactNativeDemo](https://github.co
 
 RN无埋点的实现原理是修改用户`React Native`，`React-navigation`， `React-Native-Navigation`的源码。所以需要预先处理`js`文件，[GitHub 开源 JS 脚本](https://github.com/growingio/GIORNHook)。
 
-#### （1）使用命令行进入项目根目录，执行下面操作（二者任选其一即可）： 
+#### （1）使用命令行进入项目根目录，执行下面操作（二者任选其一即可）：
 
 ```bash
 npm install --save react-native-autotrack-growingio
@@ -35,21 +35,19 @@ npm install --save https://github.com/growingio/GIORNHook.git#0.0.5
 #### （2） 配置 `package.json` 文件
 
 考虑到了`hook.js`每次`npm install`之后都需要执行， 建议直接配在项目的`package.json`中，  
-在原有文件中，添加如下代码，保存后执行**`npm install`**。
+在原有文件中，添加如下代码，保存后执行`npm install`。
 
 ```bash
 "scripts": {
-	  "postinstall": "node node_modules/react-native-autotrack-growingio/hook.js -run"
+      "postinstall": "node node_modules/react-native-autotrack-growingio/hook.js -run"
 }
 ```
-
-
 
 ## Android 集成
 
 ### 1. 添加 Android 无埋点 SDK 依赖
 
-React  Native 无埋点 SDK 是在 Android 原生 SDK 上的扩展，参照 [Android 无埋点 SDK](../android-sdk/#ji-cheng-wu-mai-dian-sdk)，集成步骤的 1~5，注意将 SDK 版本号替换成 RN 版本`RN-autotrack-2.6.2` 
+React Native 无埋点 SDK 是在 Android 原生 SDK 上的扩展，参照 [Android 无埋点 SDK](../android-sdk/#ji-cheng-wu-mai-dian-sdk)，集成步骤的 1~5，注意将 SDK 版本号替换成 RN 版本`RN-autotrack-2.6.2`
 
 集成步骤中，只有版本号不同，适配 RN 与原生混合开发场景。
 
@@ -72,8 +70,6 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-
-
 ## iOS 集成
 
 ### **1. 选择SDK集成方式**
@@ -83,8 +79,7 @@ public class MainApplication extends Application implements ReactApplication {
 1. 添加`pod 'GrowingReactNativeKit'`到Podfile中
 2. 执行`pod update`,不要用`--no-repo-update`选项
 3. **\(optional\)** GrowingIO推荐您添加**AdSupport.framework**依赖库,用于来源管理激活匹配,有利于您更好的分析的数据
-
-* 添加项目依赖库的位置在项目设置target -&gt; 选项卡General -&gt; Linked Frameworks and Libraries
+4. 添加项目依赖库的位置在项目设置target -&gt; 选项卡General -&gt; Linked Frameworks and Libraries
 
 二.手动安装
 
@@ -103,10 +98,11 @@ npm install --save https://github.com/growingio/react-native-growingio.git#0.0.6
 ```
 
 ```bash
-react-native link react-native-growingio 
+react-native link react-native-growingio
 ```
 
 {% hint style="info" %}
+
 如果`react-native link react-native-growingio`失败
 
 （成功则忽略此步骤），即发现`Libraries`中没有`GrowingIORNPlugin.xcodeproj`，则可手动配置：
@@ -114,15 +110,12 @@ react-native link react-native-growingio
 1. 打开 XCode 工程中, 右键点击 Libraries 文件夹 ➜ Add Files to &lt;...&gt; 
 2. 去 `node_modules`  ➜ `react-native-growingio` ➜ iOS ➜ 选择 `GrowingIORNPlugin.xcodeproj` 
 3. 在工程`Build Phases` ➜ `Link Binary With Libraries`中添加`libGrowingIORNPlugin.a`
-{% endhint %}
 
 ### 3. 重要配置项
 
 与原生混合开发的开发者可详细查看[ iOS 无埋点 重要配置](../ios-sdk/#zhong-yao-pei-zhi)文档，如果原生控件使用不多，只需关注如下配置即可：
 
 * \*\*\*\*[**App Store 提交应用注意事项**](../ios-sdk/#zai-app-store-ti-jiao-ying-yong)\*\*\*\*
-
-
 
 ## 页面识别
 
@@ -162,11 +155,9 @@ NativeModules.GrowingIO.onPagePrepare("pageName");
 NativeModules.GrowingIO.onPageShow("pageName");
 ```
 
-
-
 ## 自定义事件和变量API
 
-| 方法名 | 参数类型 | 说明                                      |
+| 方法名 | 参数类型 | 说明 |
 | :--- | :--- | :--- |
 | track | \(String eventId, Object eventLevelVariable\(optional\)\) | 自定义事件 |
 | trackWithNumber | \(String eventId, Number number, Object eventLevelVariable\(optional\)\) | 自定义事件 |
@@ -182,53 +173,54 @@ NativeModules.GrowingIO.onPageShow("pageName");
 
 #### 参数限制条件
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
+| eventId | 非空，长度限制小于等于50； |
+| :--- | :--- |
+
+
+| number | 非空。 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">eventId</td>
-      <td style="text-align:left">非空，长度限制小于等于50；</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">number</td>
-      <td style="text-align:left">非空。</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">eventLevelVariable</td>
-      <td style="text-align:left">
+      <th style="text-align:left">eventLevelVariable</th>
+      <th style="text-align:left">
         <p>不可使用嵌套的<code>JSONObject</code>对象，即为JSONObject中不可以放入<code>JSONObject</code>或者<code>JSONArray</code>；</p>
         <p>key 长度限制小于等于50，value长度限制小等于1000。</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table>| conversionVariables | 同上 |
+| :--- | :--- |
+
+
+| peopleVariables | 同上 |
+| :--- | :--- |
+
+
+| visitor | 同上 |
+| :--- | :--- |
+
+
+<table>
+  <thead>
     <tr>
-      <td style="text-align:left">conversionVariables</td>
-      <td style="text-align:left">同上</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">peopleVariables</td>
-      <td style="text-align:left">同上</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">visitor</td>
-      <td style="text-align:left">同上</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">userId</td>
-      <td style="text-align:left">
+      <th style="text-align:left">userId</th>
+      <th style="text-align:left">
         <p>长度限制小于等于1000；</p>
         <p>如果值为空则清空了登录用户变量，不建议这么用，</p>
         <p>请使用 clearUserId 清除登录用户变量。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>#### 代码示例：
-
-GrowingIOPackage 向 RN 提供了一个 NativeModule ， 所有打点接口都是由其实现，使用方法如下：
+  </thead>
+  <tbody></tbody>
+</table>GrowingIOPackage 向 RN 提供了一个 NativeModule ， 所有打点接口都是由其实现，使用方法如下：
 
 ```javascript
 //在使用 GrowingIO 埋点功能的文件中导入 NativeModules
@@ -258,24 +250,21 @@ NativeModules.GrowingIO.clearUserId();
 
 //setVisitor 设置访问用户变量
 NativeModules.GrowingIO.setVisitor({ "age": 20, "gender": "male" });
-
 ```
-
-
 
 ## 高级选项设置
 
 开发者可以为`UI`元素添加`growingParams`
 
-####  代码示例:
+#### 代码示例:
 
 ```markup
 <Text growingParams={{id:"test",content:"test",info:"test",ignore:"true"}}>高级选项设置</Text>
 ```
 
-####  属性列表 
+#### 属性列表
 
-| 属性名称         | 参数限制                         | 描述 | 功能对应于原生接口       |
+| 属性名称 | 参数限制 | 描述 | 功能对应于原生接口 |
 | :--- | :--- | :--- | :--- |
 | ignore | 仅接受`"true"` | 忽略对应的元素，不采集点击事件和浏览事件 | [Android](../android-sdk/#hu-lve-yuan-su) 文档解释，iOS 意义相同 |
 | track | 仅接受`"true"` | 采集输入框内容，默认采集输入框内容变化次数，不采集内容 | [Android](../android-sdk/#cai-ji-shu-ru-kuang-shu-ju) 文档解释，iOS 意义相同 |
@@ -296,8 +285,6 @@ NativeModules.GrowingIO.setVisitor({ "age": 20, "gender": "male" });
 | WebView |
 | RefreshControl |
 | ActivityIndicator |
-
-
 
 ## 验证 SDK 是否正常工作
 
@@ -321,18 +308,16 @@ NativeModules.GrowingIO.setVisitor({ "age": 20, "gender": "male" });
 
 > 是的,但不属于growingio的原因,具体可以参考[issue](https://github.com/growingio/react-native-growingio/issues/4)中的解答,并且可以使用[rn-patch.zip](https://github.com/growingio/react-native-growingio/files/2166299/rn-patch.zip)来解决这个问题
 
-2. 支持react native 版本?
+1. 支持react native 版本?
 
 > 0.46 ~ 0.56
 
-3. chrome debug时是否可以校验sdk采集数据的准确性?
+1. chrome debug时是否可以校验sdk采集数据的准确性?
 
 > 目前不支持,但不影响您chrome debug调试自己的项目, 建议您在release环境下校验
 
-4. react native页面中的tabbar imp event不准确?click event是否受影响?
+1. react native页面中的tabbar imp event不准确?click event是否受影响?
 
 > \(1\) 原则上对于react native中的tabbar控件,我们只能保证使用原生代码UITabBarController,或者不是RCT为前缀的原生控件实现的tabbar,可以正确采集tabbar上的imp  
 > \(2\) click event不受影响,可正确采集
-
-
 

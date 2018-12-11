@@ -18,7 +18,7 @@
 
 （未出现在上述渠道名单的渠道可以在渠道管理功能中新增配置）
 
-### 1. 今日头条 <a id="31"></a>
+## 1. 今日头条  <a id="31"></a>
 
 1. 进入GIO后台，为今日头条的投放生成一条监测链接。进入“渠道管理”模块，点击“今日头条”，“是否回传激活”字段设置为“是”。
 
@@ -30,7 +30,7 @@
 
 ![](https://docs.growingio.com/.gitbook/assets/10%20%281%29.png)
 
-### 2. 广点通 <a id="32"></a>
+## 2. 广点通  <a id="32"></a>
 
 通过授权认证的方式配置您的腾讯社交广告平台投放监测
 
@@ -60,18 +60,18 @@ f.输入联调设备进行联调
 
 g.联调成功后，启用转化状态
 
-![](../.gitbook/assets/image%20%28188%29.png)
+![](../.gitbook/assets/image-188.png)
 
-![](../.gitbook/assets/image%20%2848%29.png)
+![](../.gitbook/assets/image-48.png)
 
-### 3. 爱奇艺 <a id="33"></a>
+## 3. 爱奇艺  <a id="33"></a>
 
 1. 在GIO后台生成一条目标渠道为“爱奇艺”的监测链接。
 2. 将链接放置到爱奇艺广告后台，创意部分的“第三方点击监测”上。
 
    ![](https://docs.growingio.com/.gitbook/assets/13.png)
 
-### 4. 百度原生信息流 <a id="34"></a>
+## 4. 百度原生信息流  <a id="34"></a>
 
 1.在GIO后台生成百度原生信息流监测链接后，进入百度推广后台：[https://www2.baidu.com](https://www2.baidu.com)
 
@@ -91,11 +91,11 @@ g.联调成功后，启用转化状态
 
 9.联调成功
 
-![](../.gitbook/assets/image%20%2870%29.png)
+![](../.gitbook/assets/image-70.png)
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image-78.png)
 
-### 5. Inmobi <a id="35"></a>
+## 5. Inmobi  <a id="35"></a>
 
 1. 进入Growingio广告监测后台，进入推广管理，创建监测并选取Inmobi渠道，生成监测链接。
 2. 进入Inmobi后台，创建主张，选择GrowingIO渠道，创建成功后，将Inmobi生成的appID复制并填写到GrowingIO后台相应链接上。
@@ -104,19 +104,17 @@ g.联调成功后，启用转化状态
 
    ![](https://docs.growingio.com/.gitbook/assets/inmobi2.png)
 
-### 6. 微博超级粉丝通 <a id="36"></a>
+## 6. 微博超级粉丝通  <a id="36"></a>
 
 1.在GIO后台生成一条目标渠道为“超级粉丝通”的监测链接。
 
 2.将监测链接填写到微博超级粉丝通后台
 
-![](https://docs.growingio.com/.gitbook/assets/%E8%B6%85%E7%BA%A7%E7%B2%89%E4%B8%9D%E9%80%9A1.png)
+![](https://docs.growingio.com/.gitbook/assets/超级粉丝通1.png)
 
 3.将微博超级粉丝通后台生成的“company” 字段复制到GrowingIO后台
 
-### 
-
-### 7. 腾讯社交广告 Marketing api
+## 7. 腾讯社交广告 Marketing api
 
 腾讯社交广告（广点通），归因与展现方式为：
 
@@ -124,12 +122,11 @@ g.联调成功后，启用转化状态
 
 2\)GroiwngIO实时将激活数据发送给广点通，广点通返回激活信息，点击时间，广告名称等信息；
 
-3\)GroiwngIO根据广点通返回的归因结果，按照广告主在热云后台的“推广参数”进行二次归因，并展示在GroiwngIO后台。  
-
+3\)GroiwngIO根据广点通返回的归因结果，按照广告主在热云后台的“推广参数”进行二次归因，并展示在GroiwngIO后台。
 
 1、在GIO后台创建Normal—Link链接，目标渠道选择“腾讯社交广告”，然后点击保存
 
-![](../.gitbook/assets/image%20%28152%29.png)
+![](../.gitbook/assets/image-152.png)
 
 2、点击保存后进入绑定与授权，
 
@@ -137,45 +134,43 @@ g.联调成功后，启用转化状态
 
 2）投放账号ID：填写对应的腾讯社交广后台的账户ID，然后点击授权。
 
-3）应用ID：填写您选取应用的对应ID，示例：IOS填写Appstore地址上面的数字。  
+3）应用ID：填写您选取应用的对应ID，示例：IOS填写Appstore地址上面的数字。
 
-
-![](../.gitbook/assets/image%20%2899%29.png)
+![](../.gitbook/assets/image-99.png)
 
 其中，“投放账号”和“投放账号ID”，与广点通后台相对应。
 
 获取方式如下：
 
-![](../.gitbook/assets/image%20%28176%29.png)
+![](../.gitbook/assets/image-176.png)
 
 应用标识，请与广点通后台填写的“应用宝ID”或“苹果商店ID”保持一致。
 
 * 图示为苹果商店ID获取方式。
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image-27.png)
 
-3、点击授权之后再这里进行同意授权，同事返回GIO后台获取监测链接  
+3、点击授权之后再这里进行同意授权，同事返回GIO后台获取监测链接
 
-
-![](../.gitbook/assets/image%20%28143%29.png)
+![](../.gitbook/assets/image-143.png)
 
 4、进入腾讯社交广告后台开始联调，在工具箱里面选择“转化跟踪”。
 
-![](../.gitbook/assets/image%20%2895%29.png)
+![](../.gitbook/assets/image-95.png)
 
 5、点击“获取点击数据”，按照图示在移动应用上填写应用ID，在feedback URL上填写GIO生成的监测链接。
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](../.gitbook/assets/image-22.png)
 
 6、开始联调。
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image-21.png)
 
 7、填写对应的设备号。
 
-![](../.gitbook/assets/image%20%2893%29.png)
+![](../.gitbook/assets/image-93.png)
 
 8、联调成功，去Appstore或者应用宝下载您的APP。
 
-![](../.gitbook/assets/image%20%2896%29.png)
+![](../.gitbook/assets/image-96.png)
 

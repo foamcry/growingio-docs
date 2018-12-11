@@ -11,7 +11,7 @@
 * 在进行导出之前，请务必参考[“GrowingIO接口认证”文档](authentication.md)，完成接口认证获取 token 。
 * 统计数据导出的延迟一般为 30 分钟，比如导出早上 8 点到 9 点之间的数据时，一般需要 9:30 才能统计完毕。另外，每天凌晨因为需要运行天级别的统计任务，此时前一天的统计数据大概有 3-4 小时的延迟，一般凌晨 4 点以后会统计完毕。
 
-### 1.看板数据信息 API <a id="dashboard-api"></a>
+## 1.看板数据信息 API  <a id="dashboard-api"></a>
 
 获取看板中的图表信息
 
@@ -38,7 +38,7 @@
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
- 认证 Token，见 API 认证文档
+认证 Token，见 API 认证文档
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="X-Client-Id" type="string" required=true %}
@@ -53,7 +53,7 @@ GrowingIO 分配的公钥，见 API 认证文档
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
   id: "Dashboard Uid",
   name: "Dashboard Name",
@@ -78,9 +78,7 @@ GrowingIO 分配的公钥，见 API 认证文档
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
-### 2.单图数据下载 API V2（2018-08-29更新） <a id="chart-api"></a>
+## 2.单图数据下载 API V2（2018-08-29更新）  <a id="chart-api"></a>
 
 获取单图数据（单图下载每秒限速 2 次）
 
@@ -136,7 +134,7 @@ GrowingIO 分配的公钥，见 API 认证文档
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     id:  "Chart  Uid",
     name:  "Chart  Name",
@@ -180,11 +178,9 @@ GrowingIO 分配的公钥，见 API 认证文档
 {% endapi-method-spec %}
 {% endapi-method %}
 
+## 3.分群下载 API  <a id="segmentation-api"></a>
 
-
-### 3.分群下载 API <a id="segmentation-api"></a>
-
-#### 3.1 获取分群列表 <a id="resource"></a>
+### 3.1 获取分群列表  <a id="resource"></a>
 
 {% api-method method="get" host="https://www.growingio.com/projects/:project\_id/segmentations.json" path="" %}
 {% api-method-summary %}
@@ -220,7 +216,7 @@ GrowingIO 分配的公钥，见 API 认证文档
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 [
   {
     id: "Segmentation Uid",
@@ -244,7 +240,7 @@ GrowingIO 分配的公钥，见 API 认证文档
 {% endapi-method-spec %}
 {% endapi-method %}
 
-#### 3.2 获取特定分群的用户列表 <a id="resource"></a>
+### 3.2 获取特定分群的用户列表  <a id="resource"></a>
 
 {% api-method method="get" host="https://www.growingio.com/projects/:project\_id/segmentations/:segmentation\_id/users.csv" path="" %}
 {% api-method-summary %}
@@ -284,7 +280,7 @@ GrowingIO 分配的公钥，见 API 认证文档
 以 Tab 分割的 csv 文件，内容为上传的用户属性
 {% endapi-method-response-example-description %}
 
-```
+```text
 cs1    name    
 12249    GrowingIO
 ```
@@ -295,7 +291,7 @@ cs1    name
 
 \*\*\*\*
 
-### 4.规则逻辑 API 接口 <a id="rule-api"></a>
+## 4.规则逻辑 API 接口  <a id="rule-api"></a>
 
 获取圈选元素定义
 
@@ -333,7 +329,7 @@ GrowingIO 分配的公钥，见 API 认证文档
 以 Tab 分割的 csv 文件
 {% endapi-method-response-example-description %}
 
-```
+```text
 ruleId,eventName,eventType
 f2503720,元素_注册按钮,clck
 ```
@@ -344,7 +340,7 @@ f2503720,元素_注册按钮,clck
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
   "message": "Unauthorized",
   "errors": []
@@ -357,7 +353,7 @@ f2503720,元素_注册按钮,clck
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
   "message": "Request timeout",
   "errors": [
@@ -372,6 +368,4 @@ f2503720,元素_注册按钮,clck
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

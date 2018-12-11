@@ -8,8 +8,6 @@ description: GrowingIO 埋点 SDK 仅自动采集设备信息和您埋点内容�
 
 支持 Weex 0.16.0 以上，暂不支持低版本。
 
-
-
 ## 注意
 
 {% hint style="danger" %}
@@ -18,11 +16,9 @@ description: GrowingIO 埋点 SDK 仅自动采集设备信息和您埋点内容�
 在同时集成原生无埋点 SDK 和 Weex 埋点 SDK 时， Weex 实现的界面可以圈选， 但是因为本身获取不到元素点击和页面访问事件，所以圈选结果不准确， 只有元素浏览量是真实的，如果想统计相关数据，请使用[自定义事件和变量](weex-mai-dian-sdk.md#zi-ding-yi-shi-jian-he-bian-liang-api)发送您需要的数据。
 {% endhint %}
 
-
-
 ## Android 集成
 
-###  1.添加 Android 原生 SDK 依赖
+### 1.添加 Android 原生 SDK 依赖
 
 * 建议使用 Android Studio 打开项目中， `platforms`文件夹中的`android` 文件夹
 * Weex 埋点 SDK 是在 Android 原生 SDK 上的扩展，参照[ Android 埋点 SDK](android-sdk/android-mai-dian-sdk.md#ji-cheng-mai-dian-sdk)，集成步骤的 1~4，操作步骤完全一致。
@@ -37,7 +33,7 @@ weexpack plugin add weex-growingio
 
 * 手动集成：
 
- 在相应工程的`build.gradle`文件的`dependencies`中添加
+  在相应工程的`build.gradle`文件的`dependencies`中添加
 
 ```text
 compile 'com.growingio.android:vds-weex:0.3'
@@ -47,13 +43,11 @@ compile 'com.growingio.android:vds-weex:0.3'
 
 和 Android 埋点 SDK 一致，[传送门](android-sdk/android-mai-dian-sdk.md#zhong-yao-pei-zhi)。
 
-
-
 ## iOS 集成
 
 ### 1. **添加 iOS 埋点 SDK 依赖**
 
-React  Native 埋点 SDK 是在 iOS 原生 SDK 上的扩展，请参照 [iOS 埋点 SDK 集成步骤 1~3 ](ios-sdk/mai-dian-sdk-ji-cheng.md#mai-dian-sdk-ji-cheng)，操作完全一致。
+React Native 埋点 SDK 是在 iOS 原生 SDK 上的扩展，请参照 [iOS 埋点 SDK 集成步骤 1~3 ](ios-sdk/mai-dian-sdk-ji-cheng.md#mai-dian-sdk-ji-cheng)，操作完全一致。
 
 ### 2. 添加 SDK
 
@@ -63,13 +57,13 @@ React  Native 埋点 SDK 是在 iOS 原生 SDK 上的扩展，请参照 [iOS 埋
 weex plugin add weex-growingio
 ```
 
-    2. 手动集成 在podfile 中添加
+1. 手动集成 在podfile 中添加
 
 ```text
 pod 'WeexGrowingIO'
 ```
 
-    3. 命令行输入
+1. 命令行输入
 
 ```text
 pod update
@@ -81,8 +75,6 @@ pod update
 
 * \*\*\*\*[**App Store 提交应用注意事项**](ios-sdk/#zai-app-store-ti-jiao-ying-yong)\*\*\*\*
 
-
-
 ## 自定义事件和变量API
 
 对于用户行为，比如搜索、添加到购物车、购买等，我们可以很很容易的通过一行代码采集到这些事件，比如：
@@ -90,8 +82,6 @@ pod update
 ```javascript
 gio.track("purchase", 456, { item: '123' });
 ```
-
-
 
 ### 采集自定义事件
 
@@ -103,42 +93,31 @@ track(event);
 
 **参数说明：**
 
+| 参数名称 | 参数类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+
+
+| `eventId` | String | 是 | 事件标识符 |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">参数类型</th>
-      <th style="text-align:left">必填</th>
-      <th style="text-align:left">说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>eventId</code>
-      </td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">是</td>
-      <td style="text-align:left">事件标识符</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>number</code>
-      </td>
-      <td style="text-align:left">Number</td>
-      <td style="text-align:left">否</td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>number</code>
+      </th>
+      <th style="text-align:left">Number</th>
+      <th style="text-align:left">否</th>
+      <th style="text-align:left">
         <p>事件的数值，没有number参数时，事件默认加一；</p>
         <p>当出现number参数时，事件自增number的数值</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left"><code>eventLevelVariable</code>
-      </td>
-      <td style="text-align:left">Object</td>
-      <td style="text-align:left">否</td>
-      <td style="text-align:left">事件发生时所伴随的维度信息</td>
-    </tr>
-  </tbody>
-</table>采集自定义事件 `eventId`，该事件的属性信息属于事件级变量。
+  </thead>
+  <tbody></tbody>
+</table>| `eventLevelVariable` | Object | 否 | 事件发生时所伴随的维度信息 |
+| :--- | :--- | :--- | :--- |
+
 
 在添加所需要发送的事件代码之前，需要在打点管理用户界面配置事件以及事件级变量`eventLevelVariable`。
 
@@ -146,37 +125,32 @@ track(event);
 
 参数违反以下条件将不发送数据，调用后请验证数据是否发送，事件类型`t`为`cstm`。
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
+| `eventId` | 非空，长度限制小于等于50； |
+| :--- | :--- |
+
+
+|  `number` | 非空。 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>eventId</code>
-      </td>
-      <td style="text-align:left">非空，长度限制小于等于50；</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"> <code>number</code>
-      </td>
-      <td style="text-align:left">非空。</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>eventLevelVariable</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>eventLevelVariable</code>
+      </th>
+      <th style="text-align:left">
         <p>非空，长度限制小于等于100（<code>eventLevelVariable.length()&lt;=100</code>）；</p>
         <p><code>eventLevelVariable</code> 内部不允许嵌套 Object；</p>
         <p><code>eventLevelVariable</code>Object 中的 <code>key</code>长度限制小于等于50，<code>value</code>长度限制小等于1000。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>**示例代码：**
-
-```java
+  </thead>
+  <tbody></tbody>
+</table>```java
 //获取 gio
 var gio = weex.requireModule('GrowingIO');
 
@@ -185,7 +159,7 @@ gio.track({'eventId':'Test','number':65});
 gio.track({'eventId':'Test','number':65,'eventLevelVariable':{'city':'dalian'}});
 ```
 
-**检验数据发送日志示例：** 
+**检验数据发送日志示例：**
 
 注意 `t` 等于 `cstm` 字段，表示自定义事件发送成功，只需注意 `var`、`n` 、`num`字段，其它字段无需仔细验证**。**
 
@@ -216,8 +190,6 @@ gio.track({'eventId':'Test','number':65,'eventLevelVariable':{'city':'dalian'}})
 #### 推荐您使用MobileDebugger，我们为您列举了应用场景和验证示例，请移步查看：[cstm 事件验证](growingio-debugger/best-practice.md#cstm-shi-jian-yi-ji-guan-lian-de-shi-jian-ji-bian-liang-shi-jian)。
 {% endhint %}
 
-
-
 ### 设置转化变量
 
 ```javascript
@@ -236,26 +208,23 @@ setEvar(conversionVariables);
 
 **参数限制条件：**
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
+      <th style="text-align:left">conversionVariables</th>
+      <th style="text-align:left">
+        <p>非空，键值对个数小于等于100；</p>
+        <p><code>conversionVariables</code> 内部不允许含有<code>Object</code> 嵌套；</p>
+        <p><code>conversionVariables</code>Object 中的 <code>key</code>长度限制小于等于50，<code>value</code>长度限制小等于1000。</p>
+      </th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">conversionVariables</td>
-      <td style="text-align:left">
-        <p>非空，键值对个数小于等于100；</p>
-        <p><code>conversionVariables</code> 内部不允许含有<code>Object</code><b> </b>嵌套；</p>
-        <p><code>conversionVariables</code>Object 中的 <code>key</code>长度限制小于等于50，<code>value</code>长度限制小等于1000。</p>
-      </td>
-    </tr>
-  </tbody>
-</table>**示例**
-
-```javascript
+  <tbody></tbody>
+</table>```javascript
 //获取 gio
 var gio = weex.requireModule('GrowingIO');
 
@@ -264,7 +233,7 @@ gio.setEvar({ "evarTest":111,
         "campaignOwner":"Li Si" })
 ```
 
-**检验数据发送日志示例：** 
+**检验数据发送日志示例：**
 
 注意 `t` 等于`evar`字段，表示自定义事件发送成功，只需注意 `var` 字段，其它字段无需仔细验证**。**
 
@@ -291,8 +260,6 @@ gio.setEvar({ "evarTest":111,
 #### 推荐您使用 MobileDebugger，我们为您列举了应用场景和验证示例，请移步查看：[ evar 事件验证](growingio-debugger/best-practice.md#evar-zhuan-hua-bian-liang-shi-jian)
 {% endhint %}
 
-
-
 ### 设置用户级变量
 
 ```javascript
@@ -311,33 +278,30 @@ setPeopleVariable(peopleVariables);
 
 **参数限制条件：**
 
+| 参数名称 | 限制条件 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">限制条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">peopleVariables</td>
-      <td style="text-align:left">
+      <th style="text-align:left">peopleVariables</th>
+      <th style="text-align:left">
         <p>非空，长度限制小于等于100（<code>peopleVariables.length()&lt;=100</code>）；</p>
         <p><code>peopleVariables</code> 内部不允许含有<code>JSONObject</code>或者；</p>
         <p><code>peopleVariables</code>Object 中的 <code>key</code>长度限制小于等于50，<code>value</code>长度限制小等于1000。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>**示例代码：**
-
-```java
+  </thead>
+  <tbody></tbody>
+</table>```java
 //获取 gio
 var gio = weex.requireModule('GrowingIO');
 
 gio.setPeopleVariable({ 'name': '玎玎', 'email': 'dingding@growingio.com' })
 ```
 
-**检验数据发送日志示例：** 
+**检验数据发送日志示例：**
 
 注意 `t` 等于`ppl`字段，表示用户变量发送成功，只需注意 `var`字段，其它字段无需仔细验证。
 
@@ -363,8 +327,6 @@ gio.setPeopleVariable({ 'name': '玎玎', 'email': 'dingding@growingio.com' })
 #### 推荐您使用 MobileDebugger，我们为您列举了应用场景和验证示例，请移步查看：[ ppl 事件验证](growingio-debugger/best-practice.md#ppl-yong-hu-bian-liang-shi-jian)
 {% endhint %}
 
-
-
 ### 关联注册用户
 
 ```javascript
@@ -375,30 +337,25 @@ setUserId(userId);
 
 **参数说明：**
 
+| 参数名称 | 参数类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">参数类型</th>
-      <th style="text-align:left">必填</th>
-      <th style="text-align:left">说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">userId</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">是</td>
-      <td style="text-align:left">
+      <th style="text-align:left">userId</th>
+      <th style="text-align:left">String</th>
+      <th style="text-align:left">是</th>
+      <th style="text-align:left">
         <p>登录用户Id，长度限制小于等于1000；</p>
         <p>如果值为空则清空了登录用户变量，不建议这么用，</p>
         <p>请使用 clearUserId 清除登录用户变量。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>**示例代码：**
-
-```java
+  </thead>
+  <tbody></tbody>
+</table>```java
 //获取 gio
 var gio = weex.requireModule('GrowingIO');
 
@@ -410,8 +367,6 @@ gio.setUserId('xiaoming');
 {% hint style="info" %}
 #### 推荐您使用 MobileDebugger，我们为您列举了应用场景和验证示例，请移步查看：[ 用户变量](growingio-debugger/best-practice.md#chang-jing-yi-yong-hu-bian-liang-zhi-deng-lu-yong-hu-id)
 {% endhint %}
-
-
 
 ### 解除关联注册用户
 
@@ -430,8 +385,6 @@ var gio = weex.requireModule('GrowingIO');
 gio.clearUserId();
 ```
 
-
-
 ### 设置访问用户变量
 
 当用户未登录时，定义用户属性变量，也可用于A/B测试上传标签。
@@ -442,37 +395,32 @@ setVisitor(visitorVar);
 
 **参数说明：**
 
+| 参数名称 | 参数类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名称</th>
-      <th style="text-align:left">参数类型</th>
-      <th style="text-align:left">必填</th>
-      <th style="text-align:left">说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>visitorVar</code>
-      </td>
-      <td style="text-align:left">Object</td>
-      <td style="text-align:left">是</td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>visitorVar</code>
+      </th>
+      <th style="text-align:left">Object</th>
+      <th style="text-align:left">是</th>
+      <th style="text-align:left">
         <p>不可使用嵌套的<code>JSONObject</code>对象，即为JSONObject中不可以放入<code>JSONObject</code>或者<code>JSONArray</code>；</p>
         <p>key 长度限制小于等于50，value长度限制小等于1000，值不能为空串，也就是""。</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>**示例代码：**
-
-```java
+  </thead>
+  <tbody></tbody>
+</table>```java
 //获取 gio
 var gio = weex.requireModule('GrowingIO');
 
 gio.setVisitor({"gender":"male","age":21});
 ```
 
-**检验数据发送日志示例：** 
+**检验数据发送日志示例：**
 
 注意 `t` 等于`vstr`字段，表示访问用户变量发送成功，其它字段无需仔细验证。
 
@@ -494,8 +442,6 @@ gio.setVisitor({"gender":"male","age":21});
 }
 ```
 
-
-
 ## 验证 SDK 是否正常采集
 
 #### 验证内容：
@@ -516,15 +462,9 @@ GrowingIO.startWithConfiguration(this,new Configuration()
     );
 ```
 
-    3. iOS 查看日志：iOS 在 AppDelegate 文件中配置：
+1. iOS 查看日志：iOS 在 AppDelegate 文件中配置：
 
 ```objectivec
 [Growing setEnableLog:YES];
 ```
-
-
-
-
-
-
 

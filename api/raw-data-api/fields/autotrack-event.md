@@ -80,13 +80,9 @@
 | androidId | （新加） | string\(16\) | androidId | 6284760c2926bcd5 | 安卓系统的一个ID |
 | IMEI | （新加） | string\(16\) | IMEI（International Mobile Equipment Identity） | 867459000000000 | 国际移动设备识别码 |
 
-
-
 > **visit数据注意事项**
 
-API1.0接口中的**`countryName、region、city`**三个字段，在API2.0接口中已经删除。原因是这三个字段实际由GrowingIO内部库通过**`解析IP、地理位置`**得到的结果，可能与客户自己解析出来的结果存在差异，这样会造成客户识别的困扰。
-
-
+API1.0接口中的`countryName、region、city`三个字段，在API2.0接口中已经删除。原因是这三个字段实际由GrowingIO内部库通过`解析IP、地理位置`得到的结果，可能与客户自己解析出来的结果存在差异，这样会造成客户识别的困扰。
 
 ## action——动作事件
 
@@ -105,8 +101,6 @@ API1.0接口中的**`countryName、region、city`**三个字段，在API2.0接�
 | info | info | string\(200\) | 用户自定义信息 | 自定义 | 对应growingAttributesInfo设置的字段信息 |
 | pageRequestId | page\_id | string\(23\) | GrowingIO系统页面请求内部ID | 1521010820647fa5a9314e6 | 页面唯一的id，用于与page数据join |
 | actionRequestId | action\_id | string\(30\) | GrowingIO系统Action请求内部ID | web的action\_id以wa开头，mobile以ma开头 | 事件的唯一id |
-
-
 
 ## action\_tag——圈选动作事件
 
@@ -129,8 +123,8 @@ API1.0接口中的**`countryName、region、city`**三个字段，在API2.0接�
 > 备注
 
 1. 在基础部分数据导出（visit，page，action）之外，提供圈选数据与action级别数据的映射部分。
-2.  **rules**表示客户在GrowingIO平台上圈选的事件，rule\_id是其唯一标识。
-3.  通过**action**中的`action_id`与**action\_tag**中的`action_id`聚合，然后绑定**action\_tag**中的`rule_id`到**rules**中对应的`rule_id、name`到action的数据上。这样就可以通过规则名称进行数据分析，识别导出数据中圈选部分的数据情况。
+2. **rules**表示客户在GrowingIO平台上圈选的事件，rule\_id是其唯一标识。
+3. 通过**action**中的`action_id`与**action\_tag**中的`action_id`聚合，然后绑定**action\_tag**中的`rule_id`到**rules**中对应的`rule_id、name`到action的数据上。这样就可以通过规则名称进行数据分析，识别导出数据中圈选部分的数据情况。
 4. 建议规则建立时保持名称的唯一性，GrowingIO平台不保证规则名称的唯一。
 5. 相同的名称下可能有多个规则类型，`规则名称+规则类型`才能区分开，此处类型与基础数据**action**中的`请求事件类型`保持一致。
 

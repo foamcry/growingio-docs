@@ -4,7 +4,7 @@ description: 帮助您快速了解使用GrowingIO Web分析产品的上手步骤
 
 # 快速上手-Web
 
-### GrowingIO 分析产品介绍
+## GrowingIO 分析产品介绍
 
 GrowingIO 是基于用户行为的新一代数据分析产品，吸取了国内外数据分析的最佳实践，创新了一整套数据采集、清洗整理、展现分析的一站式解决方案，帮助企业用数据驱动业务增长。我们希望：
 
@@ -33,9 +33,9 @@ GrowingIO 是基于用户行为的新一代数据分析产品，吸取了国内�
 
 使用广告监测、事件分析、漏斗分析、留存分析、用户分群和用户细查，提升投放、产品迭代、用户运营的转化效率。
 
-### 开始使用
+## 开始使用
 
-#### 第一步：集成SDK并进行配置  <a id="di-yi-bu-ji-cheng-sdk-bing-jin-hang-pei-zhi"></a>
+### 第一步：集成SDK并进行配置   <a id="di-yi-bu-ji-cheng-sdk-bing-jin-hang-pei-zhi"></a>
 
 1. 集成[Web JS SDK](sdk-integration/web-js-sdk/)； 开发者文档
 
@@ -43,14 +43,14 @@ GrowingIO 是基于用户行为的新一代数据分析产品，吸取了国内�
 
 2. 配置完成进入[数据校验](sdk-integration/growingio-debugger/#growingio-web-debugger)，确认数据采集
 
-#### 第二步：开始查看系统提供的数据内容 <a id="di-er-bu-kai-shi-cha-kan-xi-tong-ti-gong-de-shu-ju-nei-rong"></a>
+### 第二步：开始查看系统提供的数据内容  <a id="di-er-bu-kai-shi-cha-kan-xi-tong-ti-gong-de-shu-ju-nei-rong"></a>
 
 系统提供了部分预置看板，包括“实时”，和“概览”。
 
 * [实时](dashboard/realtime.md)； 每5分钟更新一次数据，帮助您即时了解流量情况。
 * [概览](dashboard/overview.md)；整体描述你的移动端的访问、使用时长、留存、来源等数据情况。
 
-#### 第三步：开始探索使用数据定义和分析工具：  <a id="di-san-bu-kai-shi-tan-suo-shi-yong-shu-ju-ding-yi-he-fen-xi-gong-ju"></a>
+### 第三步：开始探索使用数据定义和分析工具：   <a id="di-san-bu-kai-shi-tan-suo-shi-yong-shu-ju-ding-yi-he-fen-xi-gong-ju"></a>
 
 * [了解预置维度和指标的定义](data-model/olap-model/predifined-metrics-dimensions.md)；
 * 了解“web 圈选 （[文档](data-definition/circle/web.md) \| [使用手册](http://growing.cn-bj.ufileos.com/web_circle.pdf)）”；尝试定义几个核心的产品事件，例如“加入购物车”、“浏览详情页”等。
@@ -62,11 +62,11 @@ GrowingIO 是基于用户行为的新一代数据分析产品，吸取了国内�
 * 使用看板来组织你自己的内容
   * [看板](dashboard/)
 
-#### 第四步：进行获客推广管理配置 <a id="di-si-bu-jin-hang-huo-ke-tui-guang-guan-li-pei-zhi"></a>
+### 第四步：进行获客推广管理配置  <a id="di-si-bu-jin-hang-huo-ke-tui-guang-guan-li-pei-zhi"></a>
 
 * 进行网页推广监测，[使用GrowingIO网页端广告监测功能](ads-tracking/web-marketing.md)，包括长链、短链、二维码等，做到推广获客精细化管理。
 
-### 进阶使用
+## 进阶使用
 
 * 使用分析手册，多来使用几个核心功能，并探索一些高级功能
   * 事件分析 [文档](data-analytics/event-analysis.md) \| [使用手册](https://s.growingio.com/nvN9MB)
@@ -79,7 +79,7 @@ GrowingIO 是基于用户行为的新一代数据分析产品，吸取了国内�
   * [用户细查](data-analytics/individual-user-report.md)
   * [活跃用户分析](data-analytics/user-engagement-analysis.md)
 
-### 需要进一步了解的高级功能    
+## 需要进一步了解的高级功能
 
 * **分析人员（包括分析师、产品经理、运营等）**
   * \*\*\*\*[用户变量](data-definition/user-variable/loginuserid.md)，进一步打通您的业务用户和访问用户。
@@ -93,7 +93,7 @@ GrowingIO 是基于用户行为的新一代数据分析产品，吸取了国内�
 * **系统管理员**
   * [系统项目高级配置](configuration/)，包括权限管理，用户管理，映射管理，应用管理等等。   
 
-### 主要功能使用场景和手册
+## 主要功能使用场景和手册
 
 我们提供了一些主要功能的产品使用手册，希望可以为你带来帮助：
 
@@ -102,6 +102,4 @@ GrowingIO 是基于用户行为的新一代数据分析产品，吸取了国内�
 3. [漏斗分析使用手册](https://s.growingio.com/9PXbR0)
 4. [留存分析使用手册](https://s.growingio.com/p8QD3x)
 5. [用户分群使用手册](https://s.growingio.com/9PaAZ8)
-
-
 

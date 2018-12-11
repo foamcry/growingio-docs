@@ -4,7 +4,7 @@
 * [2.认证](authentication.md#authentication)
 * [3.API 定义](authentication.md#api-definition)
 
-### 1. 术语 <a id="terminology"></a>
+## 1. 术语  <a id="terminology"></a>
 
 * **公钥（** **X-Client-Id）：**GrowingIO 分配的项目公钥，请求时用来做身份校验的一串字符码，您可以在 GrowingIO 后台点击右上角齿轮处进入【项目配置】页面中获取。
 * **私钥：**双方所约定的加密算法的私钥，您可以在 GrowingIO 后台点击右上角齿轮处进入【项目配置】页面中获取。
@@ -13,7 +13,7 @@
 * **auth**: 通过认证算法计算出来的签名，见第二部分示例代码
 * **tm**: 当前请求时间戳（unix 毫秒时间戳\)
 
-### 2. 认证 <a id="authentication"></a>
+## 2. 认证  <a id="authentication"></a>
 
 ```text
 ____________                  ___________    (ai/project/auth)   _____________
@@ -31,13 +31,13 @@ GrowingIO 会给每个项目分配个公钥\(X-Client-Id\)和私钥。具体认�
 * 用户打开客户页面，会向 Client Server 发起一个请求
 * Client Server 在渲染页面时，会向 Growing Server 做认证请求，请求参数包括 ai, project 和 auth，头部参数包含 公钥（X-Client-Id ）。
 
-### 3. API 定义
+## 3. API 定义
 
-#### Resource
+### Resource
 
 POST `https://www.growingio.com/auth/token`
 
-#### Authorization <a id="authorization"></a>
+### Authorization  <a id="authorization"></a>
 
 在 Header 里面添加一个属性：
 
@@ -45,7 +45,7 @@ POST `https://www.growingio.com/auth/token`
 | :--- | :--- | :--- | :--- |
 | X-Client-Id | String | GrowingIO 分配的公钥，请在GrowingIO后台“项目配置”页面获取 | X-Client-Id: 123abc |
 
-#### Query Parameter <a id="query-parameter"></a>
+### Query Parameter  <a id="query-parameter"></a>
 
 | 名字 | 类型 | 描述 | 示例 |
 | :--- | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ POST `https://www.growingio.com/auth/token`
 Post body 采用 raw 格式上传而不是 key-value 键值对方式上传。如：project=123abc&ai=2a1b4018cd954ec2bcc69da5138bdb96&tm=1465020309123&auth=ab3i5dazoo58314l0qqrj1aslfj1ldfaqeroqi
 {% endhint %}
 
-#### Response <a id="response"></a>
+### Response  <a id="response"></a>
 
 ```text
    {
@@ -67,7 +67,7 @@ Post body 采用 raw 格式上传而不是 key-value 键值对方式上传。如
    }
 ```
 
-#### Auth 计算示例代码
+### Auth 计算示例代码
 
 Java 版本示例代码
 
@@ -132,6 +132,4 @@ authToken("这里是 GrowingIO 给项目分配的私钥", "项目UID", "项目ID
 
 1. Growing Server 收到数据后，会用请求的 body 和 key 做同样的加密，计算是不是匹配。如果匹配，返回认证码给 Client Server。
 2. Client Server 拿到认证码后，可以使用这个认证码去请求在 GrowingIO 中的数据，比如看板和单图。
-
-
 

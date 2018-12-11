@@ -8,15 +8,19 @@ description: GrowingIO 埋点 SDK 仅自动采集设备信息和您埋点内容�
 
 ### 1. Flutter插件获取安装
 
-        根据[dart pub](https://pub.dartlang.org/packages/flutter_growingio_track#-installing-tab-)文档获取安装
+```text
+    根据[dart pub](https://pub.dartlang.org/packages/flutter_growingio_track#-installing-tab-)文档获取安装
+```
 
 ### 2. Android集成\(Native部分\)
 
-   此Flutter插件运行在Android手机上时依赖于GrowingIO Android SDK\(可以是无埋点SDK也可以是埋点SDK\)2.6.0及以上, 原生部分请参考：
+此Flutter插件运行在Android手机上时依赖于GrowingIO Android SDK\(可以是无埋点SDK也可以是埋点SDK\)2.6.0及以上, 原生部分请参考：
 
-    [Android官方文档集成SDK部分\(无埋点\)](https://docs.growingio.com/docs/sdk-integration/android-sdk/#ji-cheng-sdk) 或[Android官方文档集成SDK部分\(埋点\)](https://docs.growingio.com/docs/sdk-integration/android-sdk/android-maidian-sdk)
+```text
+[Android官方文档集成SDK部分\(无埋点\)](https://docs.growingio.com/docs/sdk-integration/android-sdk/#ji-cheng-sdk) 或[Android官方文档集成SDK部分\(埋点\)](https://docs.growingio.com/docs/sdk-integration/android-sdk/android-maidian-sdk)
+```
 
-  接入集成，可以参考仓库中的[example](https://github.com/growingio/flutter-growingio-track/tree/develop/example)项目.
+接入集成，可以参考仓库中的[example](https://github.com/growingio/flutter-growingio-track/tree/develop/example)项目.
 
 ### 3. iOS集成\(Native部分\)
 
@@ -34,7 +38,7 @@ description: GrowingIO 埋点 SDK 仅自动采集设备信息和您埋点内容�
 * 将Growing.h 和GrowingCoreKit.framework添加到iOS工程
 
 {% hint style="warning" %}
-提醒:  记得勾选 "Copy items if needed"
+提醒: 记得勾选 "Copy items if needed"
 {% endhint %}
 
 #### 2，设置URL Scheme与初始化SDK（必选）
@@ -87,14 +91,13 @@ GrowingIO.track('eventId');
 GrowingIO.track('testEventId', num: 23.0, variable: {'testKey': 'testValue', 'testNumKey': 233});
 GrowingIO.track('eventId', num: 23.0);
 GrowingIO.track('eventId', variable: {'testkey': 'testValue', 'testNumKey': 2333});
-
 ```
 
 ### 2，setEvar
 
 #### 说明：发送转化变量, 对应于evar事件
 
-   函数原型为: setEvar\(Map&lt;String, dynamic&gt; variable\), 调用示例:
+函数原型为: setEvar\(Map&lt;String, dynamic&gt; variable\), 调用示例:
 
 ```dart
 import 'package:growingioflutter/growingio_track.dart';
@@ -104,16 +107,15 @@ import 'package:growingioflutter/growingio_track.dart';
 GrowingIO.setEvar({
   'testKey': 'testValue', 'testNumKey': 2333.0
 });
-
 ```
 
 ### 3，setPeopleVariable
 
 #### 说明：发送用户变量, 对应于ppl事件
 
-  函数原型为: setPeopleVariable\(Map&lt;String, dynamic&gt; variable\)
+函数原型为: setPeopleVariable\(Map&lt;String, dynamic&gt; variable\)
 
-  调用示例:
+调用示例:
 
 ```dart
 import 'package:growingioflutter/growingio_track.dart';
@@ -123,7 +125,6 @@ import 'package:growingioflutter/growingio_track.dart';
 GrowingIO.setPeopleVariable({
   'testKey': 'testValue', 'testNumKey': 2333.0
 });
-
 ```
 
 ### 4，setUserId
@@ -144,7 +145,6 @@ import 'package:growingioflutter/growingio_track.dart';
 
 ```dart
 GrowingIO.setUserId("testUserId");
-
 ```
 
 ### 5，clearUserId
@@ -161,7 +161,6 @@ import 'package:growingioflutter/growingio_track.dart';
 
 ```dart
 GrowingIO.clearUserId();
-
 ```
 
 ### 6，setVisitor
@@ -178,10 +177,7 @@ import 'package:growingioflutter/growingio_track.dart';
 
 ```dart
 GrowingIO.setVisitor({
-	  "visitorKey": 'key', "visitorValue": 34
-	});
-
+      "visitorKey": 'key', "visitorValue": 34
+    });
 ```
-
-
 

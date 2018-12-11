@@ -12,7 +12,7 @@
 * [定义页面级变量](minp.md#define-page-dimensions)
   * [页面级变量使用的场景](minp.md#ye-mian-ji-bian-liang-shi-yong-de-chang-jing)
 
-## 按路径和函数名称进行数据定义 <a id="define-data-by-tagging-name"></a>
+## 按路径和函数名称进行数据定义  <a id="define-data-by-tagging-name"></a>
 
 按路径和函数名称进行数据定义，主要方便产品、技术人员，来根据页面和元素代码名称定义页面浏览和元素点击事件。
 
@@ -25,11 +25,11 @@
 3. 当前要定义事件的小程序的过去 7 天数据表现
 4. 当前要定义事件的小程序自动采集到的页面列表及其数据
 
-![&#x5C0F;&#x7A0B;&#x5E8F;&#x9875;&#x9762;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFBrLMQ6Br7wdTsoufB%2F-LFBwCOk9pJuFNhJ7T5u%2F%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E5%9C%88%E9%80%89%E4%BB%8B%E7%BB%8D.png?alt=media&token=5b1c37ea-48a4-4ddc-a4cd-650c6df009dc)
+![&#x5C0F;&#x7A0B;&#x5E8F;&#x9875;&#x9762;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFBrLMQ6Br7wdTsoufB%2F-LFBwCOk9pJuFNhJ7T5u%2F小程序页面圈选介绍.png?alt=media&token=5b1c37ea-48a4-4ddc-a4cd-650c6df009dc)
 
 从上图的样例可以看到，GrowingIO 小程序自动采集到 6 个页面，每个页面的具体访问趋势显示在列表内。如果要定义某个页面为指标用于后续分析，点击“**定义页面**“按钮，然后可以看到弹出框，如下图。
 
-![&#x5C0F;&#x7A0B;&#x5E8F;&#x5B9A;&#x4E49;&#x9875;&#x9762;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFBrLMQ6Br7wdTsoufB%2F-LFCIlgMuUd8kMMlyBIc%2F%E5%9C%88%E9%80%89%E9%A1%B5%E9%9D%A2%E7%BB%86%E8%8A%82.png?alt=media&token=5b245215-0878-4209-bef8-77e2ba4a9864)
+![&#x5C0F;&#x7A0B;&#x5E8F;&#x5B9A;&#x4E49;&#x9875;&#x9762;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFBrLMQ6Br7wdTsoufB%2F-LFCIlgMuUd8kMMlyBIc%2F圈选页面细节.png?alt=media&token=5b245215-0878-4209-bef8-77e2ba4a9864)
 
 输入页面名称，点击保存，就定义好了一个页面指标。之后，就可以在分析工具里面使用这个指标了。
 
@@ -46,11 +46,11 @@
 3. 当前小程序页面的过去 7 天数据表现
 4. 当前小程序页面自动采集到的行为列表及其数据
 
-![&#x5C0F;&#x7A0B;&#x5E8F;&#x9875;&#x9762;&#x5185;&#x884C;&#x4E3A;&#x5C55;&#x793A;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFCqNxsL3IBFp-oAtuG%2F-LFD2JJj8RC0hIy797uZ%2F%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A1%8C%E4%B8%BA%E5%9C%88%E9%80%89.png?alt=media&token=ff416bc8-3192-40df-aabb-9599d663834b)
+![&#x5C0F;&#x7A0B;&#x5E8F;&#x9875;&#x9762;&#x5185;&#x884C;&#x4E3A;&#x5C55;&#x793A;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFCqNxsL3IBFp-oAtuG%2F-LFD2JJj8RC0hIy797uZ%2F小程序行为圈选.png?alt=media&token=ff416bc8-3192-40df-aabb-9599d663834b)
 
- 从上图的样例可以看到，GrowingIO 小程序在榜单页面自动采集到 2 个行为，每个行为的具体点击趋势显示在列表内。如果要定义某个行为为指标用于后续分析，点击“**定义行为**“按钮，然后可以看到弹出框，如下图。
+从上图的样例可以看到，GrowingIO 小程序在榜单页面自动采集到 2 个行为，每个行为的具体点击趋势显示在列表内。如果要定义某个行为为指标用于后续分析，点击“**定义行为**“按钮，然后可以看到弹出框，如下图。
 
-![&#x5C0F;&#x7A0B;&#x5E8F;&#x5B9A;&#x4E49;&#x884C;&#x4E3A;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFCqNxsL3IBFp-oAtuG%2F-LFD59ZE5It-ZMFZ3yJs%2F%E5%9C%88%E9%80%89%E8%A1%8C%E4%B8%BA%E7%BB%86%E8%8A%82.png?alt=media&token=b8b3dc50-6138-4ff7-8b93-96ff8d4b05cf)
+![&#x5C0F;&#x7A0B;&#x5E8F;&#x5B9A;&#x4E49;&#x884C;&#x4E3A;](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LD4kKkCTHNxUGbu1QWO%2F-LFCqNxsL3IBFp-oAtuG%2F-LFD59ZE5It-ZMFZ3yJs%2F圈选行为细节.png?alt=media&token=b8b3dc50-6138-4ff7-8b93-96ff8d4b05cf)
 
 输入行为名称，点击保存，就定义好了一个行为指标。
 
@@ -58,38 +58,37 @@
 
 之后，就可以在分析工具里面使用这个事件了，同时可以在**数据管理-无埋点事件管理**中管理这个事件指标。
 
-![](../../.gitbook/assets/image%20%2890%29.png)
+![](../../.gitbook/assets/image-90.png)
 
-## 交互式数据定义 <a id="interactive-tagging-define-data"></a>
+## 交互式数据定义  <a id="interactive-tagging-define-data"></a>
 
-  
 交互式数据定义，主要帮助产品、运营、市场等非技术人员，来根据业务含义定义页面浏览和元素点击事件。
 
 ### 交互式数据定义功能使用
 
 进入无埋点数据定义功能后，点击“交互式定义”入口按钮。​
 
-![](../../.gitbook/assets/image%20%2837%29.png)
+![](../../.gitbook/assets/image-37.png)
 
 进入交互式定义页面：step1:请扫码将手机IP加入;step2:打开微信小程序。
 
 就能看到微信头像出现在下方。（如果没有显示微信头像，是因为没有授权openid，请[查看SDK配置](../../sdk-integration/mina-sdk.md#sdk-wei-xin-yong-hu-shu-xing-she-zhi)）
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](../../.gitbook/assets/image-31.png)
 
 选择自己的头像（设备），点击“开始定义”。
 
 在这个页面中，在微信小程序上实时操作，你的页面浏览或者元素点击事件的行为流会实时的显示在页面上。如果这个行为指标已被定义了，就会显示已定义标识和指标的名称。
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image-5%20%281%29.png)
 
 鼠标移到元素所在行右侧，会出现“定义”的按钮。
 
-![&#x5B9A;&#x4E49;&#x6309;&#x94AE;](../../.gitbook/assets/image%20%2852%29.png)
+![&#x5B9A;&#x4E49;&#x6309;&#x94AE;](../../.gitbook/assets/image-52.png)
 
 点击“定义元素”，会出现这个元素信息的弹窗。
 
-![&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#x5F39;&#x7A97;&#x793A;&#x610F;](../../.gitbook/assets/image%20%28138%29.png)
+![&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#x5F39;&#x7A97;&#x793A;&#x610F;](../../.gitbook/assets/image-138.png)
 
 其中如果元素存在内容和位置的属性，就会展示“元素内容分布”和“元素内容分布”的信息，帮助你了解这个点击事件代表采集的具体数据。如示例中，点击了“电影列表”这个元素，GrowingIO采集到了这个列表元素，以及元素的内容属性和位置属性（为什么我没有看到元素的内容和属性数据？可能是元素代码信息标注不完全，详细请见[小程序SDK高级配置](../../sdk-integration/mina-sdk.md#sdk-gao-ji-she-zhi-shu-ju-cai-ji-pei-zhi)）。
 
@@ -97,25 +96,25 @@
 
 给行为事件定义名称，然后点击保存。这个事件就被定义为指标了。​
 
-![&#x547D;&#x540D;&amp;&#x4FDD;&#x5B58;](../../.gitbook/assets/image%20%28101%29.png)
+![&#x547D;&#x540D;&amp;&#x4FDD;&#x5B58;](../../.gitbook/assets/image-101.png)
 
 同理定义一个页面，点击“定义页面”，展示出定义页面的弹窗，“元素点击分布”tab上，展示这个页面上所有元素的点击分布，如果页面上没有可点击的元素，则显示为空。给页面定义一个名称（如果您集成了多个项目，建议您可以采用以下的命名建议：小程序名称\_页面“来命名页面），保存。
 
 定义的内容会自动变成“已定义”的标识，并展示这个指标的名称。
 
-![](../../.gitbook/assets/image%20%2880%29.png)
+![](../../.gitbook/assets/image-80.png)
 
 ### 无埋点定义的事件指标的管理
 
 定义完后的指标，会出现在“数据管理-无埋点事件管理“功能页面中。可以根据创建人、以及右上角的快速筛选等信息的查看。
 
-![](../../.gitbook/assets/image%20%28117%29.png)
+![](../../.gitbook/assets/image-117.png)
 
 ### 使用无埋点定义的指标
 
 事件会自动出现在**”事件分析“、”漏斗分析”、“留存分析”** 的**“选择指标-自定义指标-我的指标分类”** 中，或者可以直接使用**搜索**进行查找。可以选择已定义的指标，进行进一步的数据分析。
 
-![&#x4E8B;&#x4EF6;&#x5206;&#x6790;&#x9009;&#x62E9;&#x6307;&#x6807;&#x793A;&#x4F8B;](../../.gitbook/assets/image%20%28145%29.png)
+![&#x4E8B;&#x4EF6;&#x5206;&#x6790;&#x9009;&#x62E9;&#x6307;&#x6807;&#x793A;&#x4F8B;](../../.gitbook/assets/image-145.png)
 
 ## 定义页面级变量
 

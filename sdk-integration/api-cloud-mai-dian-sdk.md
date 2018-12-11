@@ -4,7 +4,7 @@ description: GrowingIO 埋点 SDK 仅自动采集设备信息和您埋点内容�
 
 # API Cloud埋点 SDK
 
-## **1.配置Config.xml文件** 
+## **1.配置Config.xml文件**
 
 **使用此模块前先配置config.xml文件,方法如下**
 
@@ -33,45 +33,51 @@ description: GrowingIO 埋点 SDK 仅自动采集设备信息和您埋点内容�
 <preference name="urlScheme" value=" xx android项目的urlScheme  x " />
 ```
 
-    **注意preference的urlScheme需要配置两个， 一个为Android项目的， 另一个为IOS项目的， 如果只有一个平台填写自己相应平台的即可, 同理feature中的android\_urlScheme与ios\_urlScheme**
+```text
+**注意preference的urlScheme需要配置两个， 一个为Android项目的， 另一个为IOS项目的， 如果只有一个平台填写自己相应平台的即可, 同理feature中的android\_urlScheme与ios\_urlScheme**
+```
 
 **注意preference中ios项目的urlScheme在前,android项目的urlScheme在后,需要保证顺序**
 
 ## **2.下载模块zip包**
 
-  iOS模块包：[下载](https://github.com/growingio/APICloud-growingio/blob/master/iOS/iOS/GrowingIO_iOS.zip)
+iOS模块包：[下载](https://github.com/growingio/APICloud-growingio/blob/master/iOS/iOS/GrowingIO_iOS.zip)
 
-  Android模块包：[下载](https://github.com/growingio/APICloud-growingio/blob/master/android/GrowingIO.zip)
+Android模块包：[下载](https://github.com/growingio/APICloud-growingio/blob/master/android/GrowingIO.zip)
 
 ## **3.添加模块**
 
-  开发控制台-&gt; 选择应用-&gt; 模块-&gt; 自定义模块-&gt; 点击上传-&gt; 编写自定义模块信息\(注意:模块名称要和zip包名称一致\)-&gt; 点击添加模块"+" -&gt; 在已添加模块中确认是否成功添加。
+开发控制台-&gt; 选择应用-&gt; 模块-&gt; 自定义模块-&gt; 点击上传-&gt; 编写自定义模块信息\(注意:模块名称要和zip包名称一致\)-&gt; 点击添加模块"+" -&gt; 在已添加模块中确认是否成功添加。
 
 {% hint style="warning" %}
 注意：在自动定义模块中上传了压缩包，保存成功后。一定要点击添加模块后面的“+”，否则不是真正添加成功。添加成功后，去已添加模块中能看到刚刚添加的模块。
 {% endhint %}
 
-![](../.gitbook/assets/image%20%28147%29.png)
+![](../.gitbook/assets/image-147.png)
 
 ## **4.Android的额外操作**
 
-     Android云编译Loader为AppLoader， 使用自定义模块式需要编译Android自定义loader, 否则会出现模块未绑定错误, 另外需要注意的是在使用自定义loader时 请勾选 **使用升级环境编译**选项
+```text
+ Android云编译Loader为AppLoader， 使用自定义模块式需要编译Android自定义loader, 否则会出现模块未绑定错误, 另外需要注意的是在使用自定义loader时 请勾选 **使用升级环境编译**选项
+```
 
 具体步骤如下:
 
 （1）模块-自定义loader: 请勾选 **使用升级环境编译**
 
-![](../.gitbook/assets/image%20%28178%29.png)
+![](../.gitbook/assets/image-178.png)
 
 （2）云编译时， 请勾选 **使用升级环境编译**
 
-![](../.gitbook/assets/image%20%28186%29.png)
+![](../.gitbook/assets/image-186.png)
 
 ## **5.插件支持的方法**
 
 ### （1）init\(\)
 
-       **此接口为Android初始化， 在require后调用，iOS不需要，iOS已自动初始化**建议在require GrowingIO时调用此接口
+```text
+   **此接口为Android初始化， 在require后调用，iOS不需要，iOS已自动初始化**建议在require GrowingIO时调用此接口
+```
 
 ```javascript
  vargio =null;
@@ -83,41 +89,40 @@ description: GrowingIO 埋点 SDK 仅自动采集设备信息和您埋点内容�
 
 ### （2）track\(event, callback\)
 
+| 参数名 | 类型 | 是否必填 | 参数描述 |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名</th>
-      <th style="text-align:left">类型</th>
-      <th style="text-align:left">是否必填</th>
-      <th style="text-align:left">参数描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">event</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">是</td>
-      <td style="text-align:left">
+      <th style="text-align:left">event</th>
+      <th style="text-align:left">object</th>
+      <th style="text-align:left">是</th>
+      <th style="text-align:left">
         <p>key:eventId(string类型,必要key) value:(string类型)</p>
         <p>key:eventLevelVariable(string类型,非必要key) value:(object类型)</p>
         <p>key:number(string类型, 非必要key) value(number类型)</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">callback</td>
-      <td style="text-align:left">函数</td>
-      <td style="text-align:left">否</td>
-      <td style="text-align:left">
+      <th style="text-align:left">callback</th>
+      <th style="text-align:left">函数</th>
+      <th style="text-align:left">否</th>
+      <th style="text-align:left">
         <p>allback {function (ret)}：执行完读取操作后的回调函数。</p>
         <p>ret 为 callback 函数的参数，有两个属性:</p>
         <p>status:结果2种 true, false 都为布尔类型</p>
         <p>msg:结果string类型</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>调用示例：
-
-```javascript
+  </thead>
+  <tbody></tbody>
+</table>```javascript
 var gio = api.require('GrowingIO');  //引用模块
 gio.track({
             eventId: 'GIOKey'
@@ -128,37 +133,30 @@ gio.track({
 
 ### （3）setEvar\(conversionVariables, callback\)
 
+| 参数名 | 类型 | 是否必填 | 参数描述 |
+| :--- | :--- | :--- | :--- |
+
+
+| conversionVariables | object | 是 |  |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名</th>
-      <th style="text-align:left">类型</th>
-      <th style="text-align:left">是否必填</th>
-      <th style="text-align:left">参数描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">conversionVariables</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">是</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callback</td>
-      <td style="text-align:left">函数</td>
-      <td style="text-align:left">否</td>
-      <td style="text-align:left">
+      <th style="text-align:left">callback</th>
+      <th style="text-align:left">函数</th>
+      <th style="text-align:left">否</th>
+      <th style="text-align:left">
         <p>callback {function (ret)}：执行完读取操作后的回调函数。</p>
         <p>ret 为callback 函数的参数，有两个属性:</p>
         <p>status:结果2种true, false 都为布尔类型</p>
         <p>msg:结果string类型</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>调用示例：
-
-```javascript
+  </thead>
+  <tbody></tbody>
+</table>```javascript
 var gio = api.require('GrowingIO');  //引用模块
 gio.setEvar({
            "ekey":"evalue","Date":"2018-07-02"
@@ -169,37 +167,30 @@ gio.setEvar({
 
 ### （4）setPeopleVariable\(peopleVariables, callback\)
 
+| 参数名 | 类型 | 是否必填 | 参数描述 |
+| :--- | :--- | :--- | :--- |
+
+
+| peopleVariables | object | 是 |  |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名</th>
-      <th style="text-align:left">类型</th>
-      <th style="text-align:left">是否必填</th>
-      <th style="text-align:left">参数描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">peopleVariables</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">是</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callback</td>
-      <td style="text-align:left">函数</td>
-      <td style="text-align:left">否</td>
-      <td style="text-align:left">
+      <th style="text-align:left">callback</th>
+      <th style="text-align:left">函数</th>
+      <th style="text-align:left">否</th>
+      <th style="text-align:left">
         <p>callback {function (ret)}：执行完读取操作后的回调函数。</p>
         <p>ret 为callback 函数的参数，有两个属性:</p>
         <p>status:结果2种true, false 都为布尔类型</p>
         <p>msg:结果string类型</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>调用示例：
-
-```javascript
+  </thead>
+  <tbody></tbody>
+</table>```javascript
 var gio = api.require('GrowingIO');  //引用模块
 gio.setPeopleVariable({
            "ekey":"evalue","Date":"2018-07-02"
@@ -210,37 +201,30 @@ gio.setPeopleVariable({
 
 ### （5）setUserId\(userIdObject, callback\)
 
+| 参数名 | 类型 | 是否必填 | 参数描述 |
+| :--- | :--- | :--- | :--- |
+
+
+| userIdObject | object | 是 | key:userId\(string类型,必要key\) value:\(string或者number类型\) |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名</th>
-      <th style="text-align:left">类型</th>
-      <th style="text-align:left">是否必填</th>
-      <th style="text-align:left">参数描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">userIdObject</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">是</td>
-      <td style="text-align:left">key:userId(string类型,必要key) value:(string或者number类型)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callback</td>
-      <td style="text-align:left">函数</td>
-      <td style="text-align:left">否</td>
-      <td style="text-align:left">
+      <th style="text-align:left">callback</th>
+      <th style="text-align:left">函数</th>
+      <th style="text-align:left">否</th>
+      <th style="text-align:left">
         <p>callback {function (ret)}：执行完读取操作后的回调函数。</p>
         <p>ret 为 callback 函数的参数，有两个属性:</p>
         <p>status:结果2种true, false 都为布尔类型</p>
         <p>msg:结果string类型</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>调用示例：
-
-```javascript
+  </thead>
+  <tbody></tbody>
+</table>```javascript
 var gio = api.require('GrowingIO');  //引用模块
   gio.setUserId({
              "userId":"GIO"
@@ -251,31 +235,26 @@ var gio = api.require('GrowingIO');  //引用模块
 
 ### （6）clearUserId\(callback\)
 
+| 参数名 | 类型 | 是否必填 | 参数描述 |
+| :--- | :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">参数名</th>
-      <th style="text-align:left">类型</th>
-      <th style="text-align:left">是否必填</th>
-      <th style="text-align:left">参数描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">callback</td>
-      <td style="text-align:left">函数</td>
-      <td style="text-align:left">否</td>
-      <td style="text-align:left">
+      <th style="text-align:left">callback</th>
+      <th style="text-align:left">函数</th>
+      <th style="text-align:left">否</th>
+      <th style="text-align:left">
         <p>callback {function (ret)}：执行完读取操作后的回调函数。</p>
         <p>ret 为callback 函数的参数，有两个属性:</p>
         <p>status:结果2种true, false 都为布尔类型</p>
         <p>msg:结果string类型</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>调用示例：
-
-```javascript
+  </thead>
+  <tbody></tbody>
+</table>```javascript
 var gio = api.require('GrowingIO');  //引用模块
 gio.clearUserId(function(ret, err){
              //回调函数事件处理
@@ -286,23 +265,25 @@ gio.clearUserId(function(ret, err){
 
 ### 1，提示无法检测到urlScheme?
 
- 答：\(1\)查看config.xml是否配置正确
+答：\(1\)查看config.xml是否配置正确
 
-         \(2\)需要同步代码到云端,云编译生效
+```text
+     \(2\)需要同步代码到云端,云编译生效
+```
 
-### 2，模拟器无法test? 
+### 2，模拟器无法test?
 
 答： 只能真机测试
 
-### 3 ，如何查看发送的数据? 
+### 3 ，如何查看发送的数据?
 
 答： 您可以使用GrowingIO官网提供的[mobileDebugger](growingio-debugger/#growingio-mobile-debugger)工具来查看
 
-### 4 ，此模块是否包含IDFA? 
+### 4 ，此模块是否包含IDFA?
 
 答： 包含IDFA, GrowingIO 使用IDFA 来做来源管理激活设备的精确匹配，让你更好的衡量广告效果。
 
-### 5 官网web提示未检测到sdk? 
+### 5 官网web提示未检测到sdk?
 
 答: 请使用正式版包来操作几次
 
